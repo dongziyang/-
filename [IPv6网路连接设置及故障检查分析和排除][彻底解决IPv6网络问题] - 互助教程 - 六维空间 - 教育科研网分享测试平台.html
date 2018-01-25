@@ -1,0 +1,2366 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<title>[IPv6网路连接设置及故障检查分析和排除][彻底解决IPv6网络问题] - 互助教程 - 六维空间 - 教育科研网分享测试平台</title>
+<link href="http://bt.neu6.edu.cn/thread-784528-1-1.html" rel="canonical" />
+<meta name="keywords" content="[IPv6网路连接设置及故障检查分析和排除][彻底解决IPv6网络问题]" />
+<meta name="description" content=" [IPv6网路连接设置及故障检查分析和排除][彻底解决IPv6网络问题] ,六维空间 - 教育科研网分享测试平台" />
+<meta name="generator" content="Discuz! 7.2" />
+<meta name="author" content="Discuz! Team and Comsenz UI Team" />
+<meta name="copyright" content="2001-2013 Comsenz Inc." />
+<meta name="MSSmartTagsPreventParsing" content="True" />
+<meta http-equiv="MSThemeCompatible" content="Yes" />
+<base href="http://bt.neu6.edu.cn/" /><link rel="stylesheet" type="text/css" href="data/cache/style_2_common.css?eXM" /><link rel="stylesheet" type="text/css" href="data/cache/style_2_forum_viewthread.css?eXM" /><script type="text/javascript">var STYLEID = '2', STATICURL = 'static/', IMGDIR = 'static/image/common', VERHASH = 'eXM', charset = 'gbk', discuz_uid = '733468', cookiepre = 'LRpW_2132_', cookiedomain = '', cookiepath = '/', showusercard = '0', attackevasive = '0', disallowfloat = 'login|newthread', creditnotice = '1|威望|,2|浮云|,3|上传|MB,4|下载|MB,5|贡献|,6|功勋|点,7|推广|人', defaultstyle = '', REPORTURL = 'aHR0cDovL2J0Lm5ldTYuZWR1LmNuL3RocmVhZC03ODQ1MjgtMS0xLmh0bWw=', SITEURL = 'http://bt.neu6.edu.cn/', JSPATH = 'static/js/', CSSPATH = 'data/cache/style_', DYNAMICURL = '';</script>
+<script src="static/js/common.js?eXM" type="text/javascript"></script>
+<meta name="application-name" content="六维空间 - 教育科研网分享测试平台" />
+<meta name="msapplication-tooltip" content="六维空间 - 教育科研网分享测试平台" />
+<meta name="msapplication-task" content="name=论坛;action-uri=http://bt.neu6.edu.cn/forum.php;icon-uri=http://bt.neu6.edu.cn/static/image/common/bbs.ico" />
+<meta name="msapplication-task" content="name=群组;action-uri=http://bt.neu6.edu.cn/group.php;icon-uri=http://bt.neu6.edu.cn/static/image/common/group.ico" /><link rel="stylesheet" id="css_widthauto" type="text/css" href="data/cache/style_2_widthauto.css?eXM" />
+<script type="text/javascript">HTMLNODE.className += ' widthauto'</script>
+<script src="static/js/forum.js?eXM" type="text/javascript"></script>
+<style  type="text/css">#nv{border:none;padding:0px;}</style>
+</head>
+
+<body id="nv_forum" class="pg_viewthread" onkeydown="if(event.keyCode==27) return false;">
+<div id="append_parent"></div><div id="ajaxwaitid"></div>
+
+<div id="toptb" class="cl">
+<div class="wp">
+<div class="z"></div>
+<div class="y">
+</div>
+</div>
+</div>
+
+
+<div id="qmenu_menu" class="p_pop " style="display: none;">
+<ul><li><a href="home.php?mod=space&do=friend" style="background-image:url(http://bt.neu6.edu.cn/static/image/feed/friend_b.png) !important">好友</a></li>
+<li><a href="forum.php?mod=guide&view=my" style="background-image:url(http://bt.neu6.edu.cn/static/image/feed/thread_b.png) !important">帖子</a></li>
+<li><a href="home.php?mod=space&do=favorite&view=me" style="background-image:url(http://bt.neu6.edu.cn/static/image/feed/favorite_b.png) !important">收藏</a></li>
+<li><a href="home.php?mod=magic" style="background-image:url(http://bt.neu6.edu.cn/static/image/feed/magic_b.png) !important">道具</a></li>
+<li><a href="home.php?mod=medal" style="background-image:url(http://bt.neu6.edu.cn/static/image/feed/medal_b.png) !important">勋章</a></li>
+<li><a href="home.php?mod=task" style="background-image:url(http://bt.neu6.edu.cn/static/image/feed/task_b.png) !important">任务</a></li>
+</ul>
+</div>
+<div id="hd">
+<div class="p_pop h_pop" id="mn_userapp_menu" style="display: none"></div><ul class="p_pop h_pop" id="mn_N04e2_menu" style="display: none"><li><a href="home.php?mod=space&do=friend" hidefocus="true"  style="color: purple">好友</a></li><li><a href="home.php?mod=space&do=favorite&view=me" hidefocus="true"  style="color: purple">收藏</a></li><li><a href="forum.php?mod=guide&view=my" hidefocus="true"  style="color: purple">帖子</a></li><li><a href="home.php?mod=task" hidefocus="true"  style="color: purple">任务</a></li><li><a href="home.php?mod=magic" hidefocus="true"  style="color: purple">道具</a></li><li><a href="home.php?mod=medal" hidefocus="true"  style="color: purple">勋章</a></li></ul><div class="wp">
+<div class="hdc cl"><h2><a href="./" title="六维空间 - 教育科研网分享测试平台"><img src="template/comsenz_x72/images/logo.png" alt="六维空间 - 教育科研网分享测试平台" border="0" /></a></h2>
+
+<div id="um">
+<div class="avt y"><a href="home.php?mod=space&amp;uid=733468"><img src="http://bt.neu6.edu.cn/uc_server/data/avatar/000/73/34/68_avatar_small.jpg" onerror="this.onerror=null;this.src='http://bt.neu6.edu.cn/uc_server/images/noavatar_small.gif'" /></a></div>
+<p>
+<strong class="vwmy"><a href="home.php?mod=space&amp;uid=733468" target="_blank" title="访问我的空间">草种随风飏</a></strong>
+<span class="pipe">|</span><a href="home.php?mod=spacecp">设置</a>
+<span class="pipe">|</span><a href="home.php?mod=space&amp;do=pm" id="pm_ntc">消息</a>
+<span class="pipe">|</span><a href="home.php?mod=space&amp;do=notice" id="myprompt">提醒</a><span id="myprompt_check"></span>
+<span class="pipe">|</span><a href="member.php?mod=logging&amp;action=logout&amp;formhash=7a6d56f3">退出</a>
+</p>
+<p>
+<a href="home.php?mod=spacecp&amp;ac=credit&amp;showcredit=1" id="extcreditmenu" onmouseover="delayShow(this, showCreditmenu);" class="showmenu">积分: -941</a>
+<span class="pipe">|</span>用户组: <a href="home.php?mod=spacecp&amp;ac=usergroup" id="g_upmine" class="xi2" onmouseover="delayShow(this, showUpgradeinfo)"><font color="#000000">Lv.0 初出茅庐</font></a>
+</p>
+</div>
+</div>
+
+<div id="nv">
+
+<ul><li id="mn_Ne008" ><a href="search.php" hidefocus="true" title="可搜索论坛帖子"   style="font-weight: bold;">搜索<span>可搜索论坛帖子</span></a></li><li id="mn_N1044" ><a href="plugin.php?id=neubt_resourceindex" hidefocus="true"   style="font-weight: bold;">资源索引</a></li><li class="a" id="mn_forum" ><a href="forum.php" hidefocus="true" title="六维空间-东北大学的IPV6资源分享试验平台"  >论坛<span>六维空间-东北大学的IPV6资源分享试验平台</span></a></li><li id="mn_group" ><a href="group.php" hidefocus="true" title="群组，谈天说地，交流兴趣，学校聚合"  >群组<span>群组，谈天说地，交流兴趣，学校聚合</span></a></li><li id="mn_Nfcf7" ><a href="misc.php?mod=tag" hidefocus="true" title="使用标签(TAG)搜索，不受搜索时间限制"   style="font-weight: bold;">标签<span>使用标签(TAG)搜索，不受搜索时间限制</span></a></li><li id="mn_N12a7" ><a href="misc.php?mod=ranklist" hidefocus="true" title="在论坛你排第几名呢？快来满足一下自己的好奇心"  >排行<span>在论坛你排第几名呢？快来满足一下自己的好奇心</span></a></li><li id="mn_N04e2" onmouseover="showMenu({'ctrlid':this.id,'ctrlclass':'hover','duration':2})"><a href="#" hidefocus="true"   style="font-weight: bold;">功能</a></li></ul>
+</div>
+<ul class="p_pop h_pop" id="plugin_menu" style="display: none">  <li><a href="plugin.php?id=bank_ane:bank" id="mn_plink_bank">社区银行</a></li>
+ </ul>
+<div id="mu" class="cl">
+</div></div>
+</div>
+
+
+<div id="wp" class="wp">
+<script type="text/javascript">var fid = parseInt('129'), tid = parseInt('784528');</script>
+
+<script src="static/js/forum_viewthread.js?eXM" type="text/javascript"></script>
+<script type="text/javascript">zoomstatus = parseInt(0);var imagemaxwidth = '800';var aimgcount = new Array();</script>
+
+<style id="diy_style" type="text/css"></style>
+<!--[diy=diynavtop]--><div id="diynavtop" class="area"></div><!--[/diy]-->
+<div id="pt" class="bm cl">
+<div class="z">
+<a href="./" class="nvhm" title="首页">六维空间 - 教育科研网分享测试平台</a><em>&raquo;</em><a href="forum.php">论坛</a> <em>&rsaquo;</em> <a href="forum.php?gid=22">六维索引互动区</a> <em>&rsaquo;</em> <a href="forum-129-1.html">互助教程</a> <em>&rsaquo;</em> <a href="thread-784528-1-1.html">[IPv6网路连接设置及故障检查分析和排除][彻底解决IPv6 ...</a>
+</div>
+</div>
+
+<style id="diy_style" type="text/css"></style>
+<div class="wp">
+<!--[diy=diy1]--><div id="diy1" class="area"></div><!--[/diy]-->
+</div>
+
+<div id="ct" class="wp cl">
+<div id="pgt" class="pgs mbm cl ">
+<div class="pgt"></div>
+<span class="y pgb" id="visitedforums" onmouseover="$('visitedforums').id = 'visitedforumstmp';this.id = 'visitedforums';showMenu({'ctrlid':this.id,'pos':'34'})"><a href="forum-129-1.html">返回列表</a></span>
+<a id="newspecial" onmouseover="$('newspecial').id = 'newspecialtmp';this.id = 'newspecial';showMenu({'ctrlid':this.id})" onclick="showWindow('newthread', 'forum.php?mod=post&action=newthread&fid=129')" href="javascript:;" title="发新帖"><img src="static/image/common/pn_post.png" alt="发新帖" /></a></div>
+
+
+
+<div id="postlist" class="pl bm">
+<table cellspacing="0" cellpadding="0">
+<tr>
+<td class="pls ptn pbn">
+<div class="hm ptn">
+<span class="xg1">查看:</span> <span class="xi1">23542</span><span class="pipe">|</span><span class="xg1">回复:</span> <span class="xi1">5</span>
+</div>
+</td>
+<td class="plc ptm pbn vwthd">
+<div class="y">
+<a href="forum.php?mod=viewthread&amp;action=printable&amp;tid=784528" title="打印" target="_blank"><img src="static/image/common/print.png" alt="打印" class="vm" /></a>
+<a href="forum.php?mod=redirect&amp;goto=nextoldset&amp;tid=784528" title="上一主题"><img src="static/image/common/thread-prev.png" alt="上一主题" class="vm" /></a>
+<a href="forum.php?mod=redirect&amp;goto=nextnewset&amp;tid=784528" title="下一主题"><img src="static/image/common/thread-next.png" alt="下一主题" class="vm" /></a>
+</div>
+<h1 class="ts">
+<a href="forum.php?mod=forumdisplay&amp;fid=129&amp;filter=typeid&amp;typeid=420">[网络相关]</a>
+<span id="thread_subject">[IPv6网路连接设置及故障检查分析和排除][彻底解决IPv6网络问题]</span>
+</h1>
+<span class="xg1">
+&nbsp;<img src="static/image/common/locked.gif" alt="关闭" title="关闭" class="vm" />
+<a href="thread-784528-1-1.html" onclick="return copyThreadUrl(this, '六维空间 - 教育科研网分享测试平台')" >[复制链接]</a>
+</span>
+</td>
+</tr>
+</table>
+
+
+<table cellspacing="0" cellpadding="0" class="ad">
+<tr>
+<td class="pls">
+</td>
+<td class="plc">
+</td>
+</tr>
+</table><div id="post_15986815" ><table id="pid15986815" class="plhin" summary="pid15986815" cellspacing="0" cellpadding="0">
+<tr>
+<td class="pls" rowspan="2">
+<div id="favatar15986815" class="pls favatar">
+ <div class="pi">
+<div class="authi"><a href="home.php?mod=space&amp;uid=134562" target="_blank" class="xw1" style="color: magenta">hj2514791</a>
+</div>
+</div>
+<div class="p_pop blk bui card_gender_1" id="userinfo15986815" style="display: none; margin-top: -11px;">
+<div class="m z">
+<div id="userinfo15986815_ma"></div>
+</div>
+<div class="i y">
+<div>
+<strong><a href="home.php?mod=space&amp;uid=134562" target="_blank" class="xi2" style="color: magenta">hj2514791</a></strong>
+<em>当前离线</em>
+</div><dl class="cl">
+<dt>UID</dt><dd><a href="?134562" target="_blank" class="xi2">134562</a></dd>
+<dt>积分</dt><dd><a href="home.php?mod=space&uid=134562&do=profile" target="_blank" class="xi2">1028009</a></dd>
+
+<dt>威望</dt><dd>4 </dd>
+<dt>浮云</dt><dd>150868 </dd>
+<dt>上传</dt><dd>11449864 MB</dd>
+<dt>下载</dt><dd>3625856 MB</dd>
+<dt>贡献</dt><dd>1416 </dd>
+<dt>功勋</dt><dd>0 点</dd>
+<dt>帖子</dt><dd><a href="home.php?mod=space&uid=134562&do=thread&type=reply&view=me&from=space" target="_blank" class="xi2">19336</a></dd>
+<dt>主题</dt><dd><a href="home.php?mod=space&uid=134562&do=thread&type=thread&view=me&from=space" target="_blank" class="xi2">990</a></dd>
+<dt>注册时间</dt><dd>2010-5-18</dd>
+<dt>最后登录</dt><dd>2016-8-28</dd>
+<dt></dt><dd></dd>
+<dt>QQ</dt><dd><a href="http://wpa.qq.com/msgrd?V=3&Uin=229425985&Site=六维空间 - 教育科研网分享测试平台&Menu=yes&from=discuz" target="_blank" title="发起QQ聊天"><img src="static//image/common/qq_big.gif" alt="QQ" style="margin:0px;"/></a></dd>
+<dt></dt><dd></dd>
+<dt>个人主页</dt><dd><a href="" target="_blank"></a></dd>
+
+
+</dl><div class="imicn">
+<a href="http://wpa.qq.com/msgrd?V=3&amp;Uin=229425985&amp;Site=六维空间 - 教育科研网分享测试平台&amp;Menu=yes&amp;from=discuz" target="_blank" title="QQ"><img src="static/image/common/qq.gif" alt="QQ" /></a><a href="home.php?mod=space&amp;uid=134562&amp;do=profile" target="_blank" title="查看详细资料"><img src="static/image/common/userinfo.gif" alt="查看详细资料" /></a>
+</div>
+<div id="avatarfeed"><span id="threadsortswait"></span></div>
+</div>
+</div>
+<div>
+<div class="avatar" onmouseover="showauthor(this, 'userinfo15986815')"><a href="home.php?mod=space&amp;uid=134562" class="avtm" target="_blank"><img src="http://bt.neu6.edu.cn/uc_server/data/avatar/000/13/45/62_avatar_middle.jpg" onerror="this.onerror=null;this.src='http://bt.neu6.edu.cn/uc_server/images/noavatar_middle.gif'" /></a></div>
+</div>
+<div class="tns xg2"><table cellspacing="0" cellpadding="0"><th><p><a href="home.php?mod=space&uid=134562&do=thread&type=thread&view=me&from=space" class="xi2">990</a></p>主题</th><th><p><a href="home.php?mod=space&uid=134562&do=thread&type=reply&view=me&from=space" class="xi2"><span title="19336">1万</span></a></p>帖子</th><td><p><a href="home.php?mod=space&uid=134562&do=profile" class="xi2"><span title="1028009">102万</span></a></p>积分</td></table></div>
+<p style="transform:translate(-8px)"><a href="home.php?mod=spacecp&amp;ac=usergroup&amp;gid=37" target="_blank"><img src="/data/attachment/common/a5/common_37_usergroup_icon.gif" alt="" class="vm" /></a></p>
+<p><em><a href="home.php?mod=spacecp&amp;ac=usergroup&amp;gid=37" target="_blank"><font color="magenta">★资深版主★</font></a></em></p>
+
+
+<p><span><img src="static/image/common/star_level2.gif" alt="Rank: 14" /><img src="static/image/common/star_level2.gif" alt="Rank: 14" /><img src="static/image/common/star_level2.gif" alt="Rank: 14" /><img src="static/image/common/star_level1.gif" alt="Rank: 14" /><img src="static/image/common/star_level1.gif" alt="Rank: 14" /></span></p>
+
+
+
+<dl class="pil cl">
+<dt>积分</dt><dd><a href="home.php?mod=space&uid=134562&do=profile" target="_blank" class="xi2">1028009</a></dd>
+<dt>威望</dt><dd>4 </dd>
+<dt>浮云</dt><dd>150868 </dd>
+<dt>上传</dt><dd id="upupup">11449864 MB</dd>
+<dt>贡献</dt><dd>1416 </dd>
+<dt>功勋</dt><dd>0 点</dd>
+<dt>最后登录</dt><dd>2016-8-28</dd>
+</dl>
+<p class="md_ctrl"><a href="home.php?mod=medal"><img id="md_15986815_93" src="static/image/common/medal3.gif" alt="江湖新秀荣誉勋章" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_93_menu', 'pos':'12!'})" /><img id="md_15986815_94" src="static/image/common/medal6.gif" alt="杰出贡献勋章" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_94_menu', 'pos':'12!'})" /><img id="md_15986815_42" src="static/image/common/medal22.gif" alt="超级幸运勋章" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_42_menu', 'pos':'12!'})" /><img id="md_15986815_49" src="static/image/common/medal37.gif" alt="互助先锋" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_49_menu', 'pos':'12!'})" /><img id="md_15986815_40" src="static/image/common/medal20.gif" alt="贴图大师" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_40_menu', 'pos':'12!'})" /><img id="md_15986815_39" src="static/image/common/medal14.gif" alt="六维优秀会员" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_39_menu', 'pos':'12!'})" /><img id="md_15986815_9" src="static/image/common/medal9.gif" alt="论坛财主勋章" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_9_menu', 'pos':'12!'})" /><img id="md_15986815_72" src="static/image/common/medal19.gif" alt="爆楼队队员" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_72_menu', 'pos':'12!'})" /></a></p>
+<dl class="pil cl"><a href="http://wpa.qq.com/msgrd?V=3&Uin=229425985&Site=六维空间 - 教育科研网分享测试平台&Menu=yes&from=discuz" target="_blank" title="发起QQ聊天"><img src="static//image/common/qq_big.gif" alt="QQ" style="margin:0px;"/></a></dl>
+<ul class="xl xl2 o cl">
+<li class="addflw">
+<a href="home.php?mod=spacecp&amp;ac=follow&amp;op=add&amp;hash=7a6d56f3&amp;fuid=134562" id="followmod_134562" title="收听TA" class="xi2" onclick="showWindow('followmod', this.href, 'get', 0);">收听TA</a>
+</li>
+<li class="pm2"><a href="home.php?mod=spacecp&amp;ac=pm&amp;op=showmsg&amp;handlekey=showmsg_134562&amp;touid=134562&amp;pmid=0&amp;daterange=2&amp;pid=15986815&amp;tid=784528" onclick="showWindow('sendpm', this.href);" title="发消息" class="xi2">发消息</a></li>
+</ul>
+</div>
+</td>
+<td class="plc">
+<div class="pi">
+<div id="fj" class="y">
+<label class="z">电梯直达</label>
+<input type="text" class="px p_fre z" size="2" onkeyup="$('fj_btn').href='forum.php?mod=redirect&ptid=784528&authorid=0&postno='+this.value" onkeydown="if(event.keyCode==13) {window.location=$('fj_btn').href;return false;}" title="跳转到指定楼层" />
+<a href="javascript:;" id="fj_btn" class="z" title="跳转到指定楼层"><img src="static/image/common/fj_btn.png" alt="跳转到指定楼层" class="vm" /></a>
+</div>
+<strong>
+<a href="thread-784528-1-1.html"   id="postnum15986815" onclick="setCopy(this.href, '帖子地址复制成功');return false;">
+楼主</a>
+</strong>
+<div class="pti">
+<div class="pdbt">
+</div>
+<div class="authi">
+<img class="authicn vm" id="authicon15986815" src="static/image/common/online_rycbzsbz.gif" />
+<em id="authorposton15986815">发表于 2011-9-1 05:57</em>
+<span class="pipe">|</span>
+<a href="forum.php?mod=viewthread&amp;tid=784528&amp;page=1&amp;authorid=134562" rel="nofollow">只看该作者</a>
+<span class="none"><img src="static/image/common/arw_r.gif" class="vm" alt="回帖奖励" /></span>
+<span class="pipe show">|</span><a href="forum.php?mod=viewthread&amp;tid=784528&amp;extra=page%3D1&amp;ordertype=1"  class="show">倒序浏览</a>
+<span class="pipe show">|</span><a href="javascript:;" onclick="readmode($('thread_subject').innerHTML, 15986815);" class="show">阅读模式</a>
+</div>
+</div>
+</div><div class="pct"><style type="text/css">.pcb{margin-right:0}</style><div class="pcb">
+ 
+<div class="t_fsz">
+<table cellspacing="0" cellpadding="0"><tr><td class="t_f" id="postmessage_15986815">
+<i class="pstatus"> 本帖最后由 hj2514791 于 2011-9-5 00:00 编辑 </i><br />
+<br />
+<p style="line-height:30px;text-indent:2em;text-align:center"><font face="微软雅黑"><font size="5"><font color="Red"><strong><font color="808000">手</font><font color="767614">把</font><font color="6C6C27">手</font><font color="62623B">对</font><font color="59594E">i</font><font color="4F4F62">p</font><font color="454576">v</font><font color="3B3B89">6</font><font color="31319D">进</font><font color="2727B1">行</font><font color="8080FF">高</font><font color="6699D9">级</font><font color="4DB3B3">设</font><font color="33CC8C">置</font><font color="1AE666">,</font><font color="00FF40">让</font><font color="2ED100">I</font><font color="46B900">P</font><font color="5DA200">v</font><font color="748B00">6</font><font color="8B7400">设</font><font color="A25D00">置</font><font color="B94600">不</font><font color="D12E00">再</font><font color="E81700">陌</font><font color="FF0000">生</font></strong></font></font></font></p><br />
+<hr class="l" /><table cellspacing="0" class="t_table" style="width:98%" bgcolor="Gray"><tr><td> <font size="5"><font color="Red"><strong>导 读</strong></font></font></td></tr><tr><td> <font size="4"><strong><font color="Blue">沙发较实用，检查Ipv6问题</font></strong></font></td></tr><tr><td> <font size="4"><strong>椅子较概念化，可看看前头，后面可不看</strong></font></td></tr><tr><td> <font size="4"><strong><font color="DarkOrange">板凳必看，专业实用，精髓</font></strong></font></td></tr><tr><td><strong><font size="4"><font color="Magenta">地板关于隧道问题有需要的看</font></font></strong></td></tr></table><br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<br />
+<p style="line-height:30px;text-indent:2em;text-align:center"><font size="6"><font face="微软雅黑"><strong>目录</strong></font></font></p><br />
+<br />
+<font size="4"><strong><font face="微软雅黑"><font color="Red">IPv6网路连接设置及故障检查分析</font></font></strong></font>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<a href="http://bt.neu6.edu.cn/redirect.php?goto=findpost&amp;ptid=784528&amp;pid=15986845" target="_blank"><font size="4"><strong><font face="微软雅黑"><font color="Green">沙发</font></font></strong></font></a><br />
+<br />
+<hr class="l" /><font face="微软雅黑"><font color="Olive">Ⅰ.Ⅰ.确保系统已安装IPv6协议<br />
+<hr class="l" />Ⅱ.确保分配到了可用的IPv6地址<br />
+<hr class="l" />Ⅲ.确保可ping通IPv6协议的网站<br />
+<hr class="l" />Ⅳ.确保自己的网关能ping通<br />
+<hr class="l" />Ⅴ.网卡直接能获取到IPv6地址<br />
+<hr class="l" />Ⅵ.通过隧道方式接入IPv6<br />
+<hr class="l" />Ⅶ.检查浏览器功能正常<br />
+<hr class="l" />Ⅷ.XP或2003卸载IPv6协议后重新安装<br />
+<hr class="l" />Ⅸ.防火墙或安全软件产生故障<br />
+<hr class="l" />Ⅹ.第三方系统优化软件优化导致问题</font></font><br />
+<hr class="l" /><br />
+<br />
+<br />
+<strong><font face="微软雅黑"><font size="4"><font color="Red">使用CMD中netsh指令对IPv6进行配置（图文详解）</font></font></font></strong>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<br />
+<hr class="l" /><font size="4"><strong><font color="Purple">①</font> netsh命令的介绍</strong></font><br />
+<font size="4"><strong><font color="Purple">②</font> 进入netsh命令</strong></font>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; <a href="http://bt.neu6.edu.cn/redirect.php?goto=findpost&amp;ptid=784528&amp;pid=15986909" target="_blank"><strong><font face="微软雅黑"><font size="4"><font color="SeaGreen">椅子</font></font></font></strong></a><br />
+<font size="4"><strong><font color="Purple">③</font> netsh在IPv6协议下的有用指令 </strong></font><br />
+<hr class="l" /><font size="4"><strong><font color="Purple">④</font><font color="Red">常用且重要命令图文详解</font></strong></font>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; <a href="http://bt.neu6.edu.cn/redirect.php?goto=findpost&amp;ptid=784528&amp;pid=15987178" target="_blank"><font size="4"><strong><font color="SeaGreen">板凳</font></strong></font></a><br />
+<hr class="l" /><font size="4"><strong><font color="Purple">⑤</font> IPv4网络下接入IPv6网络的方法（隧道与第三方软件）</strong></font>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<a href="http://bt.neu6.edu.cn/redirect.php?goto=findpost&amp;ptid=784528&amp;pid=15988150" target="_blank"><font size="4"><strong><font color="SeaGreen">地板</font></strong></font></a><br />
+<hr class="l" /></td></tr></table>
+
+
+</div>
+<div id="comment_15986815" class="cm">
+</div>
+
+<h3 class="psth xs1"><span class="icon_ring vm"></span>评分</h3>
+<dl id="ratelog_15986815" class="rate">
+<dd style="margin:0">
+<div id="post_rate_15986815"></div>
+<table class="ratl">
+<tr>
+<th class="xw1" width="120"><a href="forum.php?mod=misc&amp;action=viewratings&amp;tid=784528&amp;pid=15986815" onclick="showWindow('viewratings', this.href)" title="查看全部评分"> 参与人数 <span class="xi1">2</span></a></th><th class="xw1" width="80">浮云 <i><span class="xi1">+40</span></i></th>
+<th>
+<a href="javascript:;" onclick="toggleRatelogCollapse('ratelog_15986815', this);" class="y xi2 op">收起</a>
+<i class="txt_h">理由</i>
+</th>
+</tr>
+<tbody class="ratl_l"><tr id="rate_15986815_213078">
+<td>
+<a href="home.php?mod=space&amp;uid=213078" target="_blank"><img src="http://bt.neu6.edu.cn/uc_server/data/avatar/000/21/30/78_avatar_small.jpg" onerror="this.onerror=null;this.src='http://bt.neu6.edu.cn/uc_server/images/noavatar_small.gif'" /></a> <a href="home.php?mod=space&amp;uid=213078" target="_blank">阳光下的泪点</a>
+</td><td class="xi1"> + 10</td>
+<td class="xg1">技术贴，赞~</td>
+</tr>
+<tr id="rate_15986815_184812">
+<td>
+<a href="home.php?mod=space&amp;uid=184812" target="_blank"><img src="http://bt.neu6.edu.cn/uc_server/data/avatar/000/18/48/12_avatar_small.jpg" onerror="this.onerror=null;this.src='http://bt.neu6.edu.cn/uc_server/images/noavatar_small.gif'" /></a> <a href="home.php?mod=space&amp;uid=184812" target="_blank">Jrain</a>
+</td><td class="xi1"> + 30</td>
+<td class="xg1">一楼添加一个超链接吧，这样的帖子最好是放在互助档案~~</td>
+</tr>
+</tbody>
+</table>
+<p class="ratc">
+<a href="forum.php?mod=misc&amp;action=viewratings&amp;tid=784528&amp;pid=15986815" onclick="showWindow('viewratings', this.href)" title="查看全部评分" class="xi2">查看全部评分</a>
+</p>
+</dd>
+</dl>
+</div>
+</div>
+
+</td></tr>
+<tr><td class="plc plm">
+<div id="p_btn" class="mtw mbm hm cl">
+
+<a href="home.php?mod=spacecp&amp;ac=favorite&amp;type=thread&amp;id=784528&amp;formhash=7a6d56f3" id="k_favorite" onclick="showWindow(this.id, this.href, 'get', 0);" onmouseover="this.title = $('favoritenumber').innerHTML + ' 人收藏'" title="收藏本帖"><i><img src="static/image/common/fav.gif" alt="收藏" />收藏<span id="favoritenumber">50</span></i></a>
+<a class="followp" href="home.php?mod=spacecp&amp;ac=follow&amp;op=relay&amp;tid=784528&amp;from=forum" onclick="showWindow('relaythread', this.href, 'get', 0);" title="转播求扩散"><i><img src="static/image/common/rt.png" alt="转播" />转播</i></a>
+</div>
+<div class="sign" style="max-height:200px;maxHeightIE:200px;"><img src="http://asset.neubt.com/attachments/day_120619/12061921494c23f415c443f284.jpg" onload="thumbImg(this)" alt="" /><img width="500" height="300" src="http://asset.neubt.com/attachments/day_120619/1206192153863e0035c574651d.png" border="0" alt="" /></div>
+<div class="a_pb"><a href="1193867" target="_blank" ><font face="微软雅黑" color="indianred" size=2><b> =-=★六维空间常见问题解答（第三版）★=-= </b></font></a></div></td>
+</tr>
+<tr id="_postposition15986815"></tr>
+<tr>
+<td class="pls"></td>
+<td class="plc" style="overflow:visible;">
+<div class="po hin">
+<div class="pob cl">
+<em>
+</em>
+
+<p>
+<a href="javascript:;" id="mgc_post_15986815" onmouseover="showMenu(this.id)" class="showmenu">使用道具</a>
+<a href="javascript:;" onclick="showWindow('miscreport15986815', 'misc.php?mod=report&rtype=post&rid=15986815&tid=784528&fid=129', 'get', -1);return false;">举报</a>
+</p>
+
+<ul id="mgc_post_15986815_menu" class="p_pop mgcmn" style="display: none;">
+<li><a href="home.php?mod=magic&amp;mid=bump&amp;idtype=tid&amp;id=784528" id="a_bump" onclick="showWindow(this.id, this.href)"><img src="static/image/magic/bump.small.gif" />提升卡</a></li>
+<li><a href="home.php?mod=magic&amp;mid=close&amp;idtype=tid&amp;id=784528" id="a_stick" onclick="showWindow(this.id, this.href)"><img src="static/image/magic/close.small.gif" />沉默卡</a></li>
+<li><a href="home.php?mod=magic&amp;mid=open&amp;idtype=tid&amp;id=784528" id="a_stick" onclick="showWindow(this.id, this.href)"><img src="static/image/magic/open.small.gif" />喧嚣卡</a></li>
+<li><a href="home.php?mod=magic&amp;mid=namepost&amp;idtype=pid&amp;id=15986815:784528" id="a_namepost_15986815" onclick="showWindow(this.id, this.href)"><img src="static/image/magic/namepost.small.gif" />显身卡</a><li>
+</ul>
+<script type="text/javascript" reload="1">checkmgcmn('post_15986815')</script>
+</div>
+</div>
+</td>
+</tr>
+<tr class="ad">
+<td class="pls">
+</td>
+<td class="plc">
+<div class="a_p"><a href="1147619" target="_blank"><font face="微软雅黑" color="blue"><b>六维空间技术小组招聘启事</b></font><em>(2013-5-3)</em></a></div></td>
+</tr>
+</table>
+</div><div id="post_15986845" ><table id="pid15986845" class="plhin" summary="pid15986845" cellspacing="0" cellpadding="0">
+<tr>
+<td class="pls" rowspan="2">
+<div id="favatar15986845" class="pls favatar">
+ <div class="pi">
+<div class="authi"><a href="home.php?mod=space&amp;uid=134562" target="_blank" class="xw1" style="color: magenta">hj2514791</a>
+</div>
+</div>
+<div class="p_pop blk bui card_gender_1" id="userinfo15986845" style="display: none; margin-top: -11px;">
+<div class="m z">
+<div id="userinfo15986845_ma"></div>
+</div>
+<div class="i y">
+<div>
+<strong><a href="home.php?mod=space&amp;uid=134562" target="_blank" class="xi2" style="color: magenta">hj2514791</a></strong>
+<em>当前离线</em>
+</div><dl class="cl">
+<dt>UID</dt><dd><a href="?134562" target="_blank" class="xi2">134562</a></dd>
+<dt>积分</dt><dd><a href="home.php?mod=space&uid=134562&do=profile" target="_blank" class="xi2">1028009</a></dd>
+
+<dt>威望</dt><dd>4 </dd>
+<dt>浮云</dt><dd>150868 </dd>
+<dt>上传</dt><dd>11449864 MB</dd>
+<dt>下载</dt><dd>3625856 MB</dd>
+<dt>贡献</dt><dd>1416 </dd>
+<dt>功勋</dt><dd>0 点</dd>
+<dt>帖子</dt><dd><a href="home.php?mod=space&uid=134562&do=thread&type=reply&view=me&from=space" target="_blank" class="xi2">19336</a></dd>
+<dt>主题</dt><dd><a href="home.php?mod=space&uid=134562&do=thread&type=thread&view=me&from=space" target="_blank" class="xi2">990</a></dd>
+<dt>注册时间</dt><dd>2010-5-18</dd>
+<dt>最后登录</dt><dd>2016-8-28</dd>
+<dt></dt><dd></dd>
+<dt>QQ</dt><dd><a href="http://wpa.qq.com/msgrd?V=3&Uin=229425985&Site=六维空间 - 教育科研网分享测试平台&Menu=yes&from=discuz" target="_blank" title="发起QQ聊天"><img src="static//image/common/qq_big.gif" alt="QQ" style="margin:0px;"/></a></dd>
+<dt></dt><dd></dd>
+<dt>个人主页</dt><dd><a href="" target="_blank"></a></dd>
+
+
+</dl><div class="imicn">
+<a href="http://wpa.qq.com/msgrd?V=3&amp;Uin=229425985&amp;Site=六维空间 - 教育科研网分享测试平台&amp;Menu=yes&amp;from=discuz" target="_blank" title="QQ"><img src="static/image/common/qq.gif" alt="QQ" /></a><a href="home.php?mod=space&amp;uid=134562&amp;do=profile" target="_blank" title="查看详细资料"><img src="static/image/common/userinfo.gif" alt="查看详细资料" /></a>
+</div>
+<div id="avatarfeed"><span id="threadsortswait"></span></div>
+</div>
+</div>
+<div>
+<div class="avatar" onmouseover="showauthor(this, 'userinfo15986845')"><a href="home.php?mod=space&amp;uid=134562" class="avtm" target="_blank"><img src="http://bt.neu6.edu.cn/uc_server/data/avatar/000/13/45/62_avatar_middle.jpg" onerror="this.onerror=null;this.src='http://bt.neu6.edu.cn/uc_server/images/noavatar_middle.gif'" /></a></div>
+</div>
+<div class="tns xg2"><table cellspacing="0" cellpadding="0"><th><p><a href="home.php?mod=space&uid=134562&do=thread&type=thread&view=me&from=space" class="xi2">990</a></p>主题</th><th><p><a href="home.php?mod=space&uid=134562&do=thread&type=reply&view=me&from=space" class="xi2"><span title="19336">1万</span></a></p>帖子</th><td><p><a href="home.php?mod=space&uid=134562&do=profile" class="xi2"><span title="1028009">102万</span></a></p>积分</td></table></div>
+<p style="transform:translate(-8px)"><a href="home.php?mod=spacecp&amp;ac=usergroup&amp;gid=37" target="_blank"><img src="/data/attachment/common/a5/common_37_usergroup_icon.gif" alt="" class="vm" /></a></p>
+<p><em><a href="home.php?mod=spacecp&amp;ac=usergroup&amp;gid=37" target="_blank"><font color="magenta">★资深版主★</font></a></em></p>
+
+
+<p><span><img src="static/image/common/star_level2.gif" alt="Rank: 14" /><img src="static/image/common/star_level2.gif" alt="Rank: 14" /><img src="static/image/common/star_level2.gif" alt="Rank: 14" /><img src="static/image/common/star_level1.gif" alt="Rank: 14" /><img src="static/image/common/star_level1.gif" alt="Rank: 14" /></span></p>
+
+
+
+<dl class="pil cl">
+<dt>积分</dt><dd><a href="home.php?mod=space&uid=134562&do=profile" target="_blank" class="xi2">1028009</a></dd>
+<dt>威望</dt><dd>4 </dd>
+<dt>浮云</dt><dd>150868 </dd>
+<dt>上传</dt><dd id="upupup">11449864 MB</dd>
+<dt>贡献</dt><dd>1416 </dd>
+<dt>功勋</dt><dd>0 点</dd>
+<dt>最后登录</dt><dd>2016-8-28</dd>
+</dl>
+<p class="md_ctrl"><a href="home.php?mod=medal"><img id="md_15986845_93" src="static/image/common/medal3.gif" alt="江湖新秀荣誉勋章" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_93_menu', 'pos':'12!'})" /><img id="md_15986845_94" src="static/image/common/medal6.gif" alt="杰出贡献勋章" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_94_menu', 'pos':'12!'})" /><img id="md_15986845_42" src="static/image/common/medal22.gif" alt="超级幸运勋章" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_42_menu', 'pos':'12!'})" /><img id="md_15986845_49" src="static/image/common/medal37.gif" alt="互助先锋" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_49_menu', 'pos':'12!'})" /><img id="md_15986845_40" src="static/image/common/medal20.gif" alt="贴图大师" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_40_menu', 'pos':'12!'})" /><img id="md_15986845_39" src="static/image/common/medal14.gif" alt="六维优秀会员" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_39_menu', 'pos':'12!'})" /><img id="md_15986845_9" src="static/image/common/medal9.gif" alt="论坛财主勋章" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_9_menu', 'pos':'12!'})" /><img id="md_15986845_72" src="static/image/common/medal19.gif" alt="爆楼队队员" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_72_menu', 'pos':'12!'})" /></a></p>
+<dl class="pil cl"><a href="http://wpa.qq.com/msgrd?V=3&Uin=229425985&Site=六维空间 - 教育科研网分享测试平台&Menu=yes&from=discuz" target="_blank" title="发起QQ聊天"><img src="static//image/common/qq_big.gif" alt="QQ" style="margin:0px;"/></a></dl>
+<ul class="xl xl2 o cl">
+<li class="addflw">
+<a href="home.php?mod=spacecp&amp;ac=follow&amp;op=add&amp;hash=7a6d56f3&amp;fuid=134562" id="followmod_134562" title="收听TA" class="xi2" onclick="showWindow('followmod', this.href, 'get', 0);">收听TA</a>
+</li>
+<li class="pm2"><a href="home.php?mod=spacecp&amp;ac=pm&amp;op=showmsg&amp;handlekey=showmsg_134562&amp;touid=134562&amp;pmid=0&amp;daterange=2&amp;pid=15986845&amp;tid=784528" onclick="showWindow('sendpm', this.href);" title="发消息" class="xi2">发消息</a></li>
+</ul>
+</div>
+</td>
+<td class="plc">
+<div class="pi">
+<strong>
+<a href="forum.php?mod=redirect&goto=findpost&ptid=784528&pid=15986845"   id="postnum15986845" onclick="setCopy(this.href, '帖子地址复制成功');return false;">
+<em>2</em>楼</a>
+</strong>
+<div class="pti">
+<div class="pdbt">
+</div>
+<div class="authi">
+<img class="authicn vm" id="authicon15986845" src="static/image/common/ico_lz.png" />
+&nbsp;楼主<span class="pipe">|</span>
+<em id="authorposton15986845">发表于 2011-9-1 06:57</em>
+<span class="pipe">|</span>
+<a href="forum.php?mod=viewthread&amp;tid=784528&amp;page=1&amp;authorid=134562" rel="nofollow">只看该作者</a>
+</div>
+</div>
+</div><div class="pct"><div class="pcb">
+<div class="t_fsz">
+<table cellspacing="0" cellpadding="0"><tr><td class="t_f" id="postmessage_15986845">
+<i class="pstatus"> 本帖最后由 hj2514791 于 2011-9-2 22:22 编辑 </i><br />
+<br />
+<font size="4"><strong><font color="Blue">Ⅰ.</font>确保系统已安装IPv6协议</strong></font><br />
+&nbsp; &nbsp;&nbsp;&nbsp;<font size="3"><font color="Black">1.1 Windows XP与Windows2003</font></font><br />
+Windows XP与Windows 2003操作系统默认是没有安装IPv6协议，需要手工安装IPv6协议。<br />
+<font color="Red"><strong>注:</strong></font><font color="Green">确保自己的系统是完整版，因为精简版可能缺少部分文件有可能导致无法安装协议</font><br />
+<br />
+可通过如下命令进行安装：<br />
+<p style="line-height:30px;text-indent:2em;text-align:left"><div class="blockcode"><div id="code_E8Y"><ol><li>netsh interface ipv6 install</ol></div><em onclick="copycode($('code_E8Y'));">复制代码</em></div>该命令基本可适用所有Windows操作系统（支持IPv6的），而XP还有一个单独的命令：<br />
+</p><p style="line-height:30px;text-indent:2em;text-align:left"><div class="blockcode"><div id="code_Yqd"><ol><li>ipv6&nbsp;&nbsp;install</ol></div><em onclick="copycode($('code_Yqd'));">复制代码</em></div></p>即可安装IPv6协议栈，与上面的netsh命令同样的效果。<font color="DarkOrange">注意：该命令只适用于XP，在2003以后的操作系统已经被淘汰了。</font><br />
+安装成功后可在桌面[<strong>网上邻居</strong>]点击右键，选择[<strong>属性</strong>]，再右键点击里面的[<strong>本地连接</strong>]网卡，选择[<strong>属性</strong>]，出现下图所示：<br />
+<br />
+<br />
+
+<ignore_js_op>
+
+<img id="aimg_2646873" aid="2646873" src="static/image/common/none.gif" zoomfile="/data/attachment/forum/day_110901/1109010737f889ba41a3dc66f7.jpg" file="/data/attachment/forum/day_110901/1109010737f889ba41a3dc66f7.jpg" class="zoom" onclick="zoom(this, this.src, 0, 0, 0)" width="360" id="aimg_2646873" inpost="1" onmouseover="showMenu({'ctrlid':this.id,'pos':'12'})" />
+
+<div class="tip tip_4 aimg_tip" id="aimg_2646873_menu" style="position: absolute; display: none" disautofocus="true">
+<div class="xs0">
+<p><strong>1109010556ab8437ea96b7b36c.jpg</strong> <em class="xg1">(57.08 KB, 下载次数: 39)</em></p>
+<p>
+<a href="forum.php?mod=attachment&amp;aid=MjY0Njg3M3w4MGIzODk0YXwxNTE0MzU4MjkxfDczMzQ2OHw3ODQ1Mjg%3D&amp;nothumb=yes" target="_blank">下载附件</a>
+
+</p>
+
+<p class="xg1 y">2011-9-1 07:37 上传</p>
+
+</div>
+<div class="tip_horn"></div>
+</div>
+
+</ignore_js_op>
+<br />
+此时即可确认MicrosoftTCP/IP版本6存在<br />
+<br />
+<font size="3">&nbsp;&nbsp;<font color="Black">1.2 Windows Vista、Windows 7与Windows 2008</font></font><br />
+Windows Vista与Windows 7、Windows2008默认已经安装了IPv6协议，无需安装，且直接可以在网卡里面设置IPv6地址和网关，与IPv4类似(通常自动获取)。<br />
+<hr class="l" /><br />
+<font size="4"><strong><font color="Blue">Ⅱ.</font>确保分配到了可用的IPv6地址</strong></font><br />
+&nbsp; &nbsp;win XP及2003版系统 单击[<strong>开始</strong>],选择[<strong>运行</strong>]输入<strong>CMD</strong>然后确定,出现命令提示符窗口,然后通过以下两种方式来查看是否已分配到IPv6全球单播地址<br />
+&nbsp; &nbsp;win 7及vista版系统&nbsp; &nbsp;单击[<strong>开始</strong>],在[<strong>搜索程序和文件</strong>]中输入<strong>CMD</strong>，然后右击CMD点击[<strong>以管理员身份运行</strong>]<br />
+<strong><font color="Red">注：</font></strong><font color="Green">windows 7需要右击以管理员身份运行，因为这是进行高级设置必须是重启电脑后任然有效</font><br />
+&nbsp; &nbsp; 确认已分配到2001::开头的IPv6地址，只有fe80::的地址并代表已经接入IPv6网络，这只是系统自动产生的链路本地地址，无法访问IPv6互联网。<br />
+&nbsp; &nbsp; 无法自动获取到2001::开头的IPv6地址时只能通过隧道或第三方软件来接入IPv6，因为本地网络并未开通IPv6服务。<br />
+&nbsp; &nbsp; <strong><font color="Blue">方法1</font></strong>:输入<div class="blockcode"><div id="code_bjH"><ol><li>ipconfig /all</ol></div><em onclick="copycode($('code_bjH'));">复制代码</em></div><font color="Blue"><strong>方法2</strong></font>:输入<div class="blockcode"><div id="code_J9F"><ol><li>netsh interface ipv6 show address</ol></div><em onclick="copycode($('code_J9F'));">复制代码</em></div>通常各高校教育网的用户都可直接通过DHCPv6协议或IPv6无状态地址自动配置，来自动获取到2001开头的IPv6地址,在ipconfig /all信息中会有独立的IPv6网关，通过Teredo隧道接入用户在ipconfig /all信息中是没有默认网关的，而是通过IPv4网络进行来传输IPv6数据。<br />
+&nbsp; &nbsp; 6to4隧道会分配2002::开头的IPv6地址，因此，不管何种接入方式，都必须首先确认自己已经分配到2001::或2002::开头的IPv6全球单播地址。<br />
+&nbsp; &nbsp; 下图所示的配置是教育网用户直接获取IPv6地址接入IPv6网络的配置：<br />
+&nbsp; &nbsp; 
+<ignore_js_op>
+
+<img id="aimg_2646874" aid="2646874" src="static/image/common/none.gif" zoomfile="/data/attachment/forum/day_110901/110901073796895450baa674fe.jpg" file="/data/attachment/forum/day_110901/110901073796895450baa674fe.jpg" class="zoom" onclick="zoom(this, this.src, 0, 0, 0)" width="669" id="aimg_2646874" inpost="1" onmouseover="showMenu({'ctrlid':this.id,'pos':'12'})" />
+
+<div class="tip tip_4 aimg_tip" id="aimg_2646874_menu" style="position: absolute; display: none" disautofocus="true">
+<div class="xs0">
+<p><strong>1109010623728d843409e0073f.jpg</strong> <em class="xg1">(155.68 KB, 下载次数: 43)</em></p>
+<p>
+<a href="forum.php?mod=attachment&amp;aid=MjY0Njg3NHw3MzZlYzdkZnwxNTE0MzU4MjkxfDczMzQ2OHw3ODQ1Mjg%3D&amp;nothumb=yes" target="_blank">下载附件</a>
+
+</p>
+
+<p class="xg1 y">2011-9-1 07:37 上传</p>
+
+</div>
+<div class="tip_horn"></div>
+</div>
+
+</ignore_js_op>
+<br />
+<br />
+<font size="4"><strong><font color="Blue">Ⅲ.</font>确保可ping通IPv6协议的网站</strong></font><br />
+&nbsp; &nbsp; 同上运行CMD，然后输入：<div class="blockcode"><div id="code_Q6E"><ol><li>ping www.kame.net</ol></div><em onclick="copycode($('code_Q6E'));">复制代码</em></div>或<div class="blockcode"><div id="code_voU"><ol><li>ping 6rank.edu.cn</ol></div><em onclick="copycode($('code_voU'));">复制代码</em></div>CMD会自动将域名解析成IPv6地址，且至少有一行显示[<strong>来自 200X:XXX:X:X::XXXX 的回复</strong>]的信息。<br />
+&nbsp; &nbsp;&nbsp;&nbsp;若全部都是[<strong>请求超时。</strong>]则是请求超时，代表IPv6网络不通，可能存在其它故障。<br />
+<br />
+<font size="4"><strong><font color="Blue">Ⅳ.</font>确保自己的网关能ping通</strong></font><br />
+<strong><font color="Red">注：</font></strong>如果是Teredo隧道等方式接入，则没有网关，无需进行验证过程<br />
+&nbsp; &nbsp;&nbsp;&nbsp;前面我们获取到的ipconfig /all信息中，有一项红色标注的[<strong>默认网关. . . . . . . . . . . . . : fe80::223:89ff:fe70:f9db%12</strong>]的地址（该地址根据不同地方具体情况不同而有所变 化，请替换为自己的实际网关地址，通常和自己的v4网关地址有关）<br />
+&nbsp; &nbsp;&nbsp;&nbsp;在CMD中输入以下命令：<div class="blockcode"><div id="code_QGF"><ol><li>ping fe80::223:89ff:fe70:f9db</ol></div><em onclick="copycode($('code_QGF'));">复制代码</em></div>确认信息是来自[ <strong>fe80::223:89ff:fe70:f9db 的回复: 时间=1ms</strong>]<br />
+&nbsp; &nbsp;&nbsp;&nbsp;如果是[请求超时。]则表示网关不可达，是无法接入IPv6网络<br />
+&nbsp; &nbsp;&nbsp;&nbsp;如网关可以ping通但还是无法ping通IPv6网站，按后面操作进行<br />
+<br />
+<font size="4"><strong><font color="Blue">Ⅴ.</font>网卡直接能获取到IPv6地址</strong></font><br />
+&nbsp; &nbsp;&nbsp;&nbsp;目前教育网都是双栈方式接入IPv6网络，学校内早已开通IPv6接入功能，本地连接网卡或无线网卡能开机自动获取到IPv6地址。如果是教育网， 但无法获取到IPv6地址，可能你所在的网络没有开通IPv6，可选择当前网络支持的隧道来接入IPv6<br />
+&nbsp; &nbsp;&nbsp; &nbsp;<font color="Blue">网卡能自动获取IPv6地址时，可能需要关闭Teredo隧道、ISATAP隧道、6to4隧道，避免同时开通多种IPv6网络接入方式，同时分配多个IPv6地址，导致路由表错误</font><br />
+&nbsp; &nbsp;&nbsp; &nbsp;<strong><font color="Red">PS：</font></strong>可用以下指令可以清除所有IPv6的配置，恢复系统默认值，推荐存在故障时使用此命令恢复默认值，然后再次重新配置IPv6的接入方式：<div class="blockcode"><div id="code_nGf"><ol><li>netsh interface ipv6 reset</ol></div><em onclick="copycode($('code_nGf'));">复制代码</em></div>用以下指令可将隧道服务禁用：<div class="blockcode"><div id="code_yra"><ol><li>netsh interface ipv6 6to4 set state disable</ol></div><em onclick="copycode($('code_yra'));">复制代码</em></div><div class="blockcode"><div id="code_bO4"><ol><li>netsh interface ipv6 isatap set state disable</ol></div><em onclick="copycode($('code_bO4'));">复制代码</em></div><div class="blockcode"><div id="code_Nvt"><ol><li>netsh interface ipv6 teredo set state disable</ol></div><em onclick="copycode($('code_Nvt'));">复制代码</em></div>重新配置以后确认本地只有一个2001::开头的地址后可再尝试<div class="blockcode"><div id="code_Efv"><ol><li>ping www.kame.net</ol></div><em onclick="copycode($('code_Efv'));">复制代码</em></div><div class="blockcode"><div id="code_ioL"><ol><li>ping 6rank.edu.cn</ol></div><em onclick="copycode($('code_ioL'));">复制代码</em></div>看是否有[<strong>来自 200X:XXX:X:X::XXXX 的回复</strong>]，代表IPv6已经接通了。<br />
+如仍然是[<strong>请求超时。</strong>]，代表网络仍存在故障，可能需要专业人士去所在网络环境进行专业处理<br />
+<br />
+<font size="4"><strong><font color="Blue">Ⅵ.</font>通过隧道方式接入IPv6</strong></font>&nbsp; &nbsp;<font color="Lime"><strong>具体设置见5楼</strong></font><br />
+&nbsp; &nbsp; 目前ISATAP、6to4等隧道均使用唯一的某个公网IPv4地址接入IPv6网络，诸如上交或清华等等，而Teredo隧道是使用私网IPv4地址接入IPv6网络<br />
+&nbsp; &nbsp;<br />
+&nbsp; &nbsp; 使用ISATAP隧道接入时，遇到问题时处理方法可与双栈的自动获取IPv6地址的相似<br />
+&nbsp; &nbsp; 使用Teredo方式的，可能需修改本机hosts文件，将常用的IPv6网站地址直接记录到本机hosts文件中，然后就可通过浏览器直接访问该类hosts中指定的网站，无hosts的IPv6网站将无法访问。<br />
+<font color="Green">&nbsp; &nbsp;&nbsp;&nbsp;hosts所在文件地址：</font><div class="blockcode"><div id="code_V05"><ol><li>C:\Windows\System32\drivers\etc\hosts</ol></div><em onclick="copycode($('code_V05'));">复制代码</em></div>具体方法可看Teredo隧道接入的教程<br />
+&nbsp; &nbsp;&nbsp;&nbsp;同时要确保自己的hosts文件已经修改正确，pinghosts文件中某个域名时将会显示hosts文件中设置的IPv6地址（注意使用360的同学要对hosts添加信任否者会恢复默认hosts）<br />
+&nbsp; &nbsp;&nbsp;&nbsp;且在ipconfig /all是中的不同网卡（或隧道接口）只有一个网卡存在单播的IPv6地址存在，如果多个网卡均存在2001::开头的地址（比如本地网卡、 Teredo、ISATAP隧道均同时开启了）或多个网卡同时存在2001::开头的地址与2002::开头的地址，需要在第五步中使用关闭隧道服务的指令，禁用未使用的隧道，或直接将三种隧道全部禁用，然后再按照本这里方法重新设置<br />
+<br />
+<font size="4"><strong><font color="Blue">Ⅶ.</font>检查浏览器功能正常</strong></font><br />
+&nbsp; &nbsp;&nbsp;&nbsp;如果可以ping通ipv6网站，也可以ping通网关，tracert等也正常，但还是无法打开IPv6网站，可能就是浏览器问题了 <br />
+&nbsp; &nbsp;&nbsp;&nbsp;尝试更换浏览器测试，清空缓存及cookie，然后再次访问，如还不行可重置浏览器<br />
+&nbsp; &nbsp;&nbsp;&nbsp;推荐用Firefox、Opera等非ie内核浏览器和ie浏览器进行交换测试<br />
+<br />
+<font size="4"><strong><font color="Blue">Ⅷ.</font>XP或2003卸载IPv6协议后重新安装</strong></font><br />
+&nbsp; &nbsp; 如用以上方法仍无法正常接入或使用IPv6功能，只能把IPv6协议栈在操作系统上卸载然后重新安装：<br />
+&nbsp; &nbsp; CMD中输入：<div class="blockcode"><div id="code_i4J"><ol><li>netsh interface ipv6 uninstall</ol></div><em onclick="copycode($('code_i4J'));">复制代码</em></div>执行成功后可能需要重启操作系统，然后再次重新安装IPv6，并再次重启。<br />
+&nbsp; &nbsp; <strong>注：</strong>仅适用<strong>XP和2003</strong>，Vista\Win 7无法卸载，只能重置<br />
+<br />
+<font size="4"><strong><font color="Blue">Ⅸ.</font>防火墙或安全软件产生故障</strong></font><br />
+&nbsp; &nbsp;&nbsp;&nbsp;经其他同学证实，有些非系统防火墙软件或集成了防火墙功能的杀软可能阻止IPv6协议使用<br />
+&nbsp; &nbsp;&nbsp;&nbsp;可以尝试卸载或者暂时关闭防火墙和杀软，再尝试IPv6是否可用并进行排除，如确定是属于防火墙的问题可换成其他防火墙或只用Windows系统自带的防火墙<br />
+<br />
+<font size="4"><strong><font color="Blue">Ⅹ.</font>第三方系统优化软件优化导致问题</strong></font><br />
+&nbsp; &nbsp;&nbsp;&nbsp;最常见的就是360安全卫士（老版）将IP Helper服务禁用，导致IPv6相关的隧道和其他功能无法使用：<br />
+&nbsp; &nbsp;&nbsp;&nbsp;解决办法：<br />
+&nbsp; &nbsp;&nbsp;&nbsp;右击<strong>我的电脑</strong>，点<strong>管理</strong>，进入计算机管理，找到<strong>服务</strong>如下图<br />
+
+<ignore_js_op>
+
+<img id="aimg_2646870" aid="2646870" src="static/image/common/none.gif" zoomfile="/data/attachment/forum/day_110901/1109010735d0e5199feb556b3a.jpg" file="/data/attachment/forum/day_110901/1109010735d0e5199feb556b3a.jpg" class="zoom" onclick="zoom(this, this.src, 0, 0, 0)" width="800" id="aimg_2646870" inpost="1" onmouseover="showMenu({'ctrlid':this.id,'pos':'12'})" />
+
+<div class="tip tip_4 aimg_tip" id="aimg_2646870_menu" style="position: absolute; display: none" disautofocus="true">
+<div class="xs0">
+<p><strong>QQ截图20110901073308.jpg</strong> <em class="xg1">(211.69 KB, 下载次数: 39)</em></p>
+<p>
+<a href="forum.php?mod=attachment&amp;aid=MjY0Njg3MHxlZTQ4MmEyMnwxNTE0MzU4MjkxfDczMzQ2OHw3ODQ1Mjg%3D&amp;nothumb=yes" target="_blank">下载附件</a>
+
+</p>
+
+<p class="xg1 y">2011-9-1 07:35 上传</p>
+
+</div>
+<div class="tip_horn"></div>
+</div>
+
+</ignore_js_op>
+</td></tr></table>
+
+
+</div>
+<div id="comment_15986845" class="cm">
+</div>
+
+<div id="post_rate_div_15986845"></div>
+</div>
+</div>
+
+</td></tr>
+<tr><td class="plc plm">
+<div class="sign" style="max-height:200px;maxHeightIE:200px;"><img src="http://asset.neubt.com/attachments/day_120619/12061921494c23f415c443f284.jpg" onload="thumbImg(this)" alt="" /><img width="500" height="300" src="http://asset.neubt.com/attachments/day_120619/1206192153863e0035c574651d.png" border="0" alt="" /></div>
+<div class="a_pb"><a href="1193867" target="_blank" ><font face="微软雅黑" color="indianred" size=2><b> =-=★六维空间常见问题解答（第三版）★=-= </b></font></a></div></td>
+</tr>
+<tr id="_postposition15986845"></tr>
+<tr>
+<td class="pls"></td>
+<td class="plc" style="overflow:visible;">
+<div class="po hin">
+<div class="pob cl">
+<em>
+</em>
+
+<p>
+<a href="javascript:;" id="mgc_post_15986845" onmouseover="showMenu(this.id)" class="showmenu">使用道具</a>
+<a href="javascript:;" onclick="showWindow('miscreport15986845', 'misc.php?mod=report&rtype=post&rid=15986845&tid=784528&fid=129', 'get', -1);return false;">举报</a>
+</p>
+
+<ul id="mgc_post_15986845_menu" class="p_pop mgcmn" style="display: none;">
+<li><a href="home.php?mod=magic&amp;mid=namepost&amp;idtype=pid&amp;id=15986845:784528" id="a_namepost_15986845" onclick="showWindow(this.id, this.href)"><img src="static/image/magic/namepost.small.gif" />显身卡</a><li>
+</ul>
+<script type="text/javascript" reload="1">checkmgcmn('post_15986845')</script>
+</div>
+</div>
+</td>
+</tr>
+<tr class="ad">
+<td class="pls">
+</td>
+<td class="plc">
+</td>
+</tr>
+</table>
+<script type="text/javascript" reload="1">
+aimgcount[15986845] = ['2646870','2646873','2646874'];
+attachimggroup(15986845);
+attachimgshow(15986845);
+var aimgfid = 0;
+</script>
+</div><div id="post_15986909" ><table id="pid15986909" class="plhin" summary="pid15986909" cellspacing="0" cellpadding="0">
+<tr>
+<td class="pls" rowspan="2">
+<div id="favatar15986909" class="pls favatar">
+ <div class="pi">
+<div class="authi"><a href="home.php?mod=space&amp;uid=134562" target="_blank" class="xw1" style="color: magenta">hj2514791</a>
+</div>
+</div>
+<div class="p_pop blk bui card_gender_1" id="userinfo15986909" style="display: none; margin-top: -11px;">
+<div class="m z">
+<div id="userinfo15986909_ma"></div>
+</div>
+<div class="i y">
+<div>
+<strong><a href="home.php?mod=space&amp;uid=134562" target="_blank" class="xi2" style="color: magenta">hj2514791</a></strong>
+<em>当前离线</em>
+</div><dl class="cl">
+<dt>UID</dt><dd><a href="?134562" target="_blank" class="xi2">134562</a></dd>
+<dt>积分</dt><dd><a href="home.php?mod=space&uid=134562&do=profile" target="_blank" class="xi2">1028009</a></dd>
+
+<dt>威望</dt><dd>4 </dd>
+<dt>浮云</dt><dd>150868 </dd>
+<dt>上传</dt><dd>11449864 MB</dd>
+<dt>下载</dt><dd>3625856 MB</dd>
+<dt>贡献</dt><dd>1416 </dd>
+<dt>功勋</dt><dd>0 点</dd>
+<dt>帖子</dt><dd><a href="home.php?mod=space&uid=134562&do=thread&type=reply&view=me&from=space" target="_blank" class="xi2">19336</a></dd>
+<dt>主题</dt><dd><a href="home.php?mod=space&uid=134562&do=thread&type=thread&view=me&from=space" target="_blank" class="xi2">990</a></dd>
+<dt>注册时间</dt><dd>2010-5-18</dd>
+<dt>最后登录</dt><dd>2016-8-28</dd>
+<dt></dt><dd></dd>
+<dt>QQ</dt><dd><a href="http://wpa.qq.com/msgrd?V=3&Uin=229425985&Site=六维空间 - 教育科研网分享测试平台&Menu=yes&from=discuz" target="_blank" title="发起QQ聊天"><img src="static//image/common/qq_big.gif" alt="QQ" style="margin:0px;"/></a></dd>
+<dt></dt><dd></dd>
+<dt>个人主页</dt><dd><a href="" target="_blank"></a></dd>
+
+
+</dl><div class="imicn">
+<a href="http://wpa.qq.com/msgrd?V=3&amp;Uin=229425985&amp;Site=六维空间 - 教育科研网分享测试平台&amp;Menu=yes&amp;from=discuz" target="_blank" title="QQ"><img src="static/image/common/qq.gif" alt="QQ" /></a><a href="home.php?mod=space&amp;uid=134562&amp;do=profile" target="_blank" title="查看详细资料"><img src="static/image/common/userinfo.gif" alt="查看详细资料" /></a>
+</div>
+<div id="avatarfeed"><span id="threadsortswait"></span></div>
+</div>
+</div>
+<div>
+<div class="avatar" onmouseover="showauthor(this, 'userinfo15986909')"><a href="home.php?mod=space&amp;uid=134562" class="avtm" target="_blank"><img src="http://bt.neu6.edu.cn/uc_server/data/avatar/000/13/45/62_avatar_middle.jpg" onerror="this.onerror=null;this.src='http://bt.neu6.edu.cn/uc_server/images/noavatar_middle.gif'" /></a></div>
+</div>
+<div class="tns xg2"><table cellspacing="0" cellpadding="0"><th><p><a href="home.php?mod=space&uid=134562&do=thread&type=thread&view=me&from=space" class="xi2">990</a></p>主题</th><th><p><a href="home.php?mod=space&uid=134562&do=thread&type=reply&view=me&from=space" class="xi2"><span title="19336">1万</span></a></p>帖子</th><td><p><a href="home.php?mod=space&uid=134562&do=profile" class="xi2"><span title="1028009">102万</span></a></p>积分</td></table></div>
+<p style="transform:translate(-8px)"><a href="home.php?mod=spacecp&amp;ac=usergroup&amp;gid=37" target="_blank"><img src="/data/attachment/common/a5/common_37_usergroup_icon.gif" alt="" class="vm" /></a></p>
+<p><em><a href="home.php?mod=spacecp&amp;ac=usergroup&amp;gid=37" target="_blank"><font color="magenta">★资深版主★</font></a></em></p>
+
+
+<p><span><img src="static/image/common/star_level2.gif" alt="Rank: 14" /><img src="static/image/common/star_level2.gif" alt="Rank: 14" /><img src="static/image/common/star_level2.gif" alt="Rank: 14" /><img src="static/image/common/star_level1.gif" alt="Rank: 14" /><img src="static/image/common/star_level1.gif" alt="Rank: 14" /></span></p>
+
+
+
+<dl class="pil cl">
+<dt>积分</dt><dd><a href="home.php?mod=space&uid=134562&do=profile" target="_blank" class="xi2">1028009</a></dd>
+<dt>威望</dt><dd>4 </dd>
+<dt>浮云</dt><dd>150868 </dd>
+<dt>上传</dt><dd id="upupup">11449864 MB</dd>
+<dt>贡献</dt><dd>1416 </dd>
+<dt>功勋</dt><dd>0 点</dd>
+<dt>最后登录</dt><dd>2016-8-28</dd>
+</dl>
+<p class="md_ctrl"><a href="home.php?mod=medal"><img id="md_15986909_93" src="static/image/common/medal3.gif" alt="江湖新秀荣誉勋章" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_93_menu', 'pos':'12!'})" /><img id="md_15986909_94" src="static/image/common/medal6.gif" alt="杰出贡献勋章" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_94_menu', 'pos':'12!'})" /><img id="md_15986909_42" src="static/image/common/medal22.gif" alt="超级幸运勋章" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_42_menu', 'pos':'12!'})" /><img id="md_15986909_49" src="static/image/common/medal37.gif" alt="互助先锋" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_49_menu', 'pos':'12!'})" /><img id="md_15986909_40" src="static/image/common/medal20.gif" alt="贴图大师" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_40_menu', 'pos':'12!'})" /><img id="md_15986909_39" src="static/image/common/medal14.gif" alt="六维优秀会员" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_39_menu', 'pos':'12!'})" /><img id="md_15986909_9" src="static/image/common/medal9.gif" alt="论坛财主勋章" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_9_menu', 'pos':'12!'})" /><img id="md_15986909_72" src="static/image/common/medal19.gif" alt="爆楼队队员" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_72_menu', 'pos':'12!'})" /></a></p>
+<dl class="pil cl"><a href="http://wpa.qq.com/msgrd?V=3&Uin=229425985&Site=六维空间 - 教育科研网分享测试平台&Menu=yes&from=discuz" target="_blank" title="发起QQ聊天"><img src="static//image/common/qq_big.gif" alt="QQ" style="margin:0px;"/></a></dl>
+<ul class="xl xl2 o cl">
+<li class="addflw">
+<a href="home.php?mod=spacecp&amp;ac=follow&amp;op=add&amp;hash=7a6d56f3&amp;fuid=134562" id="followmod_134562" title="收听TA" class="xi2" onclick="showWindow('followmod', this.href, 'get', 0);">收听TA</a>
+</li>
+<li class="pm2"><a href="home.php?mod=spacecp&amp;ac=pm&amp;op=showmsg&amp;handlekey=showmsg_134562&amp;touid=134562&amp;pmid=0&amp;daterange=2&amp;pid=15986909&amp;tid=784528" onclick="showWindow('sendpm', this.href);" title="发消息" class="xi2">发消息</a></li>
+</ul>
+</div>
+</td>
+<td class="plc">
+<div class="pi">
+<strong>
+<a href="forum.php?mod=redirect&goto=findpost&ptid=784528&pid=15986909"   id="postnum15986909" onclick="setCopy(this.href, '帖子地址复制成功');return false;">
+<em>3</em>楼</a>
+</strong>
+<div class="pti">
+<div class="pdbt">
+</div>
+<div class="authi">
+<img class="authicn vm" id="authicon15986909" src="static/image/common/ico_lz.png" />
+&nbsp;楼主<span class="pipe">|</span>
+<em id="authorposton15986909">发表于 2011-9-1 07:57</em>
+<span class="pipe">|</span>
+<a href="forum.php?mod=viewthread&amp;tid=784528&amp;page=1&amp;authorid=134562" rel="nofollow">只看该作者</a>
+</div>
+</div>
+</div><div class="pct"><div class="pcb">
+<div class="t_fsz">
+<table cellspacing="0" cellpadding="0"><tr><td class="t_f" id="postmessage_15986909">
+<i class="pstatus"> 本帖最后由 hj2514791 于 2011-9-1 09:26 编辑 </i><br />
+<br />
+<font size="5"><font color="Red"><strong><font face="微软雅黑">使用CMD中netsh指令对IPv6进行配置（图文详解）</font></strong></font></font><br />
+&nbsp;&nbsp;<br />
+<font size="4"><strong><font color="Purple">①</font> netsh命令的介绍</strong></font><br />
+&nbsp; &nbsp; Windows系统下，我们可使用netsh命令对IPv6的各项参数进行配置，netsh命令基本上在所有支持IPv6的操作系统下均能使用，功能非常强大，通过netsh命令，我们可以查看、添加、修改、删除各接口的IPv6地址、DNS服务器地址、网关等。同时也可以修改IPv6的全局参数、接口IPv6参数、MTU，也可以添加某些特殊的静态IPv6路由，同时配置IPv6下的6to4隧道、ISATAP隧道等各种隧道<br />
+<br />
+<font size="4"><strong><font color="Purple">②</font> 进入netsh命令 </strong></font><br />
+&nbsp; &nbsp;win XP及2003版系统 单击[<strong>开始</strong>],选择[<strong>运行</strong>]输入<strong>CMD</strong>然后确定,出现命令提示符窗口<br />
+&nbsp; &nbsp;win 7及vista版系统&nbsp; &nbsp;单击[<strong>开始</strong>],在[<strong>搜索程序和文件</strong>]中输入<strong>CMD</strong>，然后右击CMD点击[<strong>以管理员身份运行</strong>]，进入命令提示符窗口<br />
+
+<ignore_js_op>
+
+<img id="aimg_2646888" aid="2646888" src="static/image/common/none.gif" zoomfile="/data/attachment/forum/day_110901/11090108160d818e6eb98e9eb2.jpg" file="/data/attachment/forum/day_110901/11090108160d818e6eb98e9eb2.jpg" class="zoom" onclick="zoom(this, this.src, 0, 0, 0)" width="677" id="aimg_2646888" inpost="1" onmouseover="showMenu({'ctrlid':this.id,'pos':'12'})" />
+
+<div class="tip tip_4 aimg_tip" id="aimg_2646888_menu" style="position: absolute; display: none" disautofocus="true">
+<div class="xs0">
+<p><strong>QQ截图20110901081520.jpg</strong> <em class="xg1">(44.89 KB, 下载次数: 30)</em></p>
+<p>
+<a href="forum.php?mod=attachment&amp;aid=MjY0Njg4OHw0YmIzZWUyMXwxNTE0MzU4MjkxfDczMzQ2OHw3ODQ1Mjg%3D&amp;nothumb=yes" target="_blank">下载附件</a>
+
+</p>
+
+<p class="xg1 y">2011-9-1 08:16 上传</p>
+
+</div>
+<div class="tip_horn"></div>
+</div>
+
+</ignore_js_op>
+<br />
+<strong><font face="微软雅黑">红线部分为输入部分</font></strong><br />
+<br />
+<font size="4"><strong><font color="Purple">③</font> netsh在IPv6协议下的有用指令 </strong></font><br />
+
+<ignore_js_op>
+
+<img id="aimg_2646948" aid="2646948" src="static/image/common/none.gif" zoomfile="/data/attachment/forum/day_110901/1109010838c5ae9e084a78f63a.jpg" file="/data/attachment/forum/day_110901/1109010838c5ae9e084a78f63a.jpg" class="zoom" onclick="zoom(this, this.src, 0, 0, 0)" width="643" id="aimg_2646948" inpost="1" onmouseover="showMenu({'ctrlid':this.id,'pos':'12'})" />
+
+<div class="tip tip_4 aimg_tip" id="aimg_2646948_menu" style="position: absolute; display: none" disautofocus="true">
+<div class="xs0">
+<p><strong>QQ截图20110901082102.jpg</strong> <em class="xg1">(309.08 KB, 下载次数: 32)</em></p>
+<p>
+<a href="forum.php?mod=attachment&amp;aid=MjY0Njk0OHwyZDU2ZjRjZXwxNTE0MzU4MjkxfDczMzQ2OHw3ODQ1Mjg%3D&amp;nothumb=yes" target="_blank">下载附件</a>
+
+</p>
+
+<p class="xg1 y">2011-9-1 08:38 上传</p>
+
+</div>
+<div class="tip_horn"></div>
+</div>
+
+</ignore_js_op>
+<br />
+<font color="Red"><font size="4"><font size="4"><strong>命令的名称及使用方法</strong></font></font></font><br />
+<hr class="l" /><font color="Olive"><font size="6"><strong><p style="line-height:30px;text-indent:2em;text-align:center">红色加粗为常用且重要的命令</p></strong></font></font><hr class="l" /><br />
+<br />
+<strong>6to4</strong>&nbsp;&nbsp;指定使用 netsh interface IPv6 6to4 的 6to4 环境。<br />
+语法&nbsp; &nbsp;6to4<br />
+<br />
+<strong>add 6over4tunnel</strong> 使用指定的 IPv4 地址创建 6over4 接口。<br />
+语法 add 6over4tunnel [[interface=]String] [localaddress=]IPv4Address [[store=]{active | persistent}]<br />
+参数<br />
+[[ interface=]String]&nbsp;&nbsp;指定接口名称或索引。<br />
+[ localaddress=]IPv4Address 必需。指定封装的 IPv4 地址。<br />
+[[ store=]{active | persistent}] 指定更改是仅持续到下次启动为止 (active)，还是始终保持 (persistent)。默认选择为 persistent。<br />
+示例<br />
+本示例命令使用 IPv4 地址 10.1.1.1，在名为“Private”的接口上创建一个 6over4 接口。<br />
+add 6over4tunnel &quot;Private&quot; 10.1.1.1<br />
+<br />
+<strong><font color="Red">add address</font></strong> 在指定的接口上添加 IPv6 地址。时间值可以表示为天 (d)、小时 (h)、分钟 (m) 及秒 (s)。例如，2d 表示两天。<br />
+语法<br />
+add address [[interface=]String] [address=]IPv6Address [[type=]{unicast | anycast}] [[validlifetime=]{Integer | infinite}] [[preferredlifetime=]{Integer | infinite}] [[store=]{active | persistent}]<br />
+参数<br />
+[[ interface=]String] 指定接口名称或索引。<br />
+[ address=]IPv6Address 必需。指定要添加的 IPv6 地址<br />
+[[ type=]{unicast | anycast}]&nbsp;&nbsp;指定是添加单播地址 (unicast) 还是任何播地址 (anycast)。默认选择为 unicast<br />
+[[ validlifetime=]{Integer | infinite}] 指定地址有效的生存时间。默认值为 infinite<br />
+[[ preferredlifetime=]{Integer | infinite}] 指定地址处于首选状态的生存时间。默认值为 infinite。<br />
+[[ store=]{active | persistent}] 指定更改是仅持续到下次启动为止 (active)，还是始终保持 (persistent)。默认选择为 persistent。<br />
+示例<br />
+本示例命令将 IPv6 地址 FE80::2 添加到名为“Private”的接口。<br />
+add address &quot;Private&quot; FE80::2<br />
+<br />
+<strong>add dns</strong> 在指定接口的 DNS 服务器静态配置列表中添加新的 DNS 服务器 IP 地址。<br />
+语法 add dns [interface=]String [address=]IPAddress [[index=]Integer]<br />
+参数<br />
+[ interface=]String 必需。按名称指定要将 DNS 服务器 IP 地址添加到哪个接口的 DNS 服务器 IP 地址列表中。<br />
+[ address=]IPAddress 必需。指定要添加到列表中的 DNS 服务器的 IPv6 地址。<br />
+[[ index=]Integer]&nbsp;&nbsp;指定静态配置列表中用于放置在 address 中指定的 DNS 服务器 IP 地址的位置。默认情况下，DNS 服务器 IP 地址将被添加到列表的最后。<br />
+<i>注释</i> 如果指定了索引，DNS 服务器将被放在列表中的该索引位置。<br />
+示例<br />
+第一个示例命令中，IPv6 地址为 FEC0:0:0:FFFF::1 的 DNS 服务器被添加到名为“Local Area Connection”的接口的 DNS 服务器 IP 地址列表中。第二个示例中，IPv6 地址为 FEC0:0:0:FFFF::2 的 DNS 服务器被添加到名为“Local Area Connection”的接口的服务器列表的索引 2 处（作为该列表中的第二台服务器）。<br />
+add dns &quot;Local Area Connection&quot; FEC0:0:0:FFFF::1<br />
+add dns &quot;Local Area Connection&quot; FEC0:0:0:FFFF::2 index=2<br />
+<br />
+<strong><font color="Red">add prefixpolicy</font></strong> 添加指定前缀的源和目标地址选择策略。<br />
+语法 add prefixpolicy [prefix=]IPv6Address/Integer [precedence=]Integer [label=]Integer [[store=]{active | persistent}]<br />
+参数<br />
+[ prefix=]IPv6Address/Integer 必需。指定要添加到策略表中的策略的前缀。Integer 指定前缀的长度。<br />
+[ precedence=]Integer 必需。指定用于对策略表中的目标地址进行排序的优先值。<br />
+[ label=]Integer 必需。指定允许要求一个特定的源地址前缀与目标地址前缀一起使用的策略的标签值。<br />
+[[ store=]{active | persistent}] 指定更改是仅持续到下次启动为止 (active)，还是始终保持 (persistent)。默认选择为 persistent。<br />
+示例<br />
+本示例命令为前缀 ::/96 添加前缀策略（优先值为 3，标签值为 4）。<br />
+add prefixpolicy ::/96 3 4<br />
+<br />
+<strong><font color="Red">add route</font></strong> 添加指定前缀的路由。时间值可以表示为天 (d)、小时 (h)、分钟 (m) 及秒 (s)。例如，2d 表示两天。<br />
+语法<br />
+add route [prefix=]IPv6Address/Integer [[interface=]String] [[nexthop=]IPv6Address] [[siteprefixlength=]Integer] [[metric=]Integer] [[publish=]{no | yes | immortal}] [[validlifetime=]{Integer | infinite}] [[preferredlifetime=]{Integer | infinite}] [[store=]{active | persistent}]<br />
+参数<br />
+[ prefix=]IPv6Address/Integer 必需。指定要添加路由的前缀。Integer 指定前缀的长度。<br />
+[[ interface=]String] 指定接口名称或索引。<br />
+[[ nexthop=]IPv6Address] 指定网关地址（如果前缀不在链路上）。<br />
+[[ siteprefixlength=]Integer] 指定整个站点的前缀长度（如果前缀不在链路上）。<br />
+[[ metric=]Integer] 指定路由指标。<br />
+[[ publish=]{no | yes | immortal}] 指定路由在“路由公布”中是公布 (yes)、无限生存期公布 (immortal) 还是不公布 (no)。默认选择为 no。<br />
+[[ validlifetime=]{Integer | infinite}] 指定路由有效的生存时间。默认值为 infinite。<br />
+[[ preferredlifetime=]{Integer | infinite}] 指定路由处于首选状态的生存时间。默认值为 infinite。<br />
+[[ store=]{active | persistent}] 指定更改是仅持续到下次启动为止 (active)，还是始终保持 (persistent)。默认选择为 persistent。<br />
+示例<br />
+这个示例命令在名为“Internet”、前缀为 3FFE::、前缀长度为 16 位 (3FFE::/16) 的接口上添加一个路由。nexthop 的值为 FE80::1。<br />
+add route 3FFE::/16 &quot;Internet&quot; FE80::1<br />
+<br />
+<strong>add v6v4tunnel</strong>&nbsp;&nbsp;创建 IPv6-in-IPv4 隧道。<br />
+语法<br />
+add v6v4tunnel [[interface=]String] [localaddress=]IPv4Address [remoteaddress=]IPv4Address [[neighbordiscovery=]{enabled | disabled}] [[store=]{active | persistent}]<br />
+参数<br />
+[[ interface=]String] 指定接口名称或索引。<br />
+[ localaddress=]IPv4Address 必需。指定本地隧道终结点的 IPv4 地址。<br />
+[ remoteaddress=]IPv4Address 必需。指定远程隧道终结点的 IPv4 地址。<br />
+[[ neighbordiscovery=]{enabled | disabled}] 指定是在接口上启用 Neighbor Discovery (enabled) 还是禁用它 (disabled)。默认选择为 disabled。<br />
+[[ store=]{active | persistent}] 指定更改是仅持续到下次启动为止 (active)，还是始终保持 (persistent)。默认选择为 persistent。<br />
+示例<br />
+本示例命令在接口“Private”上创建了一个 IPv6-in-IPv4 隧道（在本地地址 10.0.0.1 和远程地址 192.168.1.1 之间）。<br />
+add v6v4tunnel &quot;Private&quot; 10.0.0.1 192.168.1.1<br />
+<br />
+<strong><font color="Red">delete address</font></strong> 在指定的接口上修改 IPv6 地址。<br />
+语法 delete address [[interface=]String] [address=]IPv6Address [[store=]{active | persistent}]<br />
+参数<br />
+[[ interface=]String] 指定接口名称或索引。<br />
+[ address=]IPv6Address 必需。指定要删除的 IPv6 地址。<br />
+[[ store=]{active | persistent}] 指定删除是仅持续到下次启动 (active) 还是始终保持 (persistent)。默认选择为 persistent。<br />
+示例<br />
+本示例命令从名为“Private”的接口中删除地址 FE80::2。<br />
+delete address &quot;Private&quot; FE80::2<br />
+<br />
+<strong>delete destinationcache</strong> 清除目标缓存。如果指定了接口，则仅清除该接口上的缓存。如果同时指定了地址，则仅删除该目标缓存项。<br />
+语法 delete destinationcache [[interface=]String] [[address=]IPv6Address]<br />
+参数<br />
+[[ interface=]String] 指定接口名称或索引。<br />
+[[ address=]IPv6Address] 指定目标地址。<br />
+<i>注释</i> 如果未指定任何参数，所有接口的目标缓存中的所有项都将被删除。<br />
+示例<br />
+本示例命令将删除名为“Private”的接口的目标缓存。<br />
+delete destinationcache &quot;Private&quot;<br />
+<br />
+<strong>delete dns</strong> 删除为指定接口静态配置的 DNS 服务器 IPv6 地址。<br />
+语法 delete dns [interface=]String [[address=]{IPv6Address | all}]<br />
+参数<br />
+[ interface=]String 必需。按名称指定要从其 DNS 服务器列表中删除 DNS 服务器的接口。<br />
+[[ address=]{IPv6Address | all}] 指定要删除的 DNS 服务器 IPv6 地址。如果指定了 all，该接口列表中的所有 DNS 服务器 IPv6 地址都将被删除。<br />
+示例<br />
+第 一个示例命令将从名为“Local Area Connection”的连接的地址列表中删除 DNS 服务器 IPv6 地址 FEC0:0:0:FFFF::1。第二个示例命令将删除名为“Local Area Connection”的连接的所有 DNS 服务器 IPv6 地址。<br />
+delete dns &quot;Local Area Connection&quot; FEC0:0:0:FFFF::1<br />
+delete dns &quot;Local Area Connection&quot; all<br />
+<br />
+<strong>delete interface</strong> 从 IPv6 堆栈中删除指定接口。<br />
+语法 delete interface [[interface=]String] [[store=]{active | persistent}]<br />
+参数<br />
+[[ interface=]String] 指定接口名称或索引。<br />
+[[ store=]{active | persistent}] 指定删除是仅持续到下次启动 (active) 还是始终保持 (persistent)。默认选择为 persistent。<br />
+示例<br />
+本示例命令将删除名为“Private”的接口。<br />
+delete interface &quot;Private&quot;<br />
+<br />
+<strong>delete neighbors</strong><br />
+指定删除邻居缓存中的所有项。如果指定了接口，则仅清除该接口上的缓存。如果同时指定了地址，则仅删除该邻居缓存项。<br />
+语法<br />
+delete neighbors [[interface=]String] [[address=]IPv6Address]<br />
+参数<br />
+[[ interface=]String] 指定接口名称或索引。<br />
+[[ address=]IPv6Address] 指定邻居地址。<br />
+示例<br />
+本示例命令将删除“Private”接口上的邻居缓存中的所有项。<br />
+delete neighbors &quot;Private&quot;<br />
+<br />
+<strong>delete prefixpolicy</strong> 删除指定前缀的源和目标地址选择策略。<br />
+语法 delete prefixpolicy [prefix=]IPv6Address/Integer [[store=]{active | persistent}]<br />
+参数<br />
+[ prefix=]IPv6Address/Integer 必需。指定要从策略表中删除的前缀 (IPv6Address) 和前缀长度 (Integer)。<br />
+[[ store=]{active | persistent}] 指定删除是仅持续到下次启动 (active) 还是始终保持 (persistent)。默认选择为 persistent。<br />
+示例<br />
+本命令将从策略表中删除前缀 ::/96。<br />
+delete prefixpolicy ::/96<br />
+<br />
+<strong><font color="Red">delete route</font></strong> 删除 IPv6 路由。<br />
+语法 delete route [prefix=]IPv6Address/Integer [[interface=]String] [[nexthop=]IPv6Address] [[store=]{active | persistent}]<br />
+参数<br />
+[ prefix=]IPv6Address/Integer 必需。指定要删除的路由的前缀。<br />
+[[ interface=]String] 指定接口名称或索引。<br />
+[[ nexthop=]IPv6Address] 指定网关地址（如果前缀不在链路上）。<br />
+[[ store=]{active | persistent}] 指定删除是仅持续到下次启动 (active) 还是始终保持 (persistent)。默认选择为 persistent。<br />
+示例<br />
+本示例命令将从名为“Internet”的接口删除前缀为 3FFE::/16、网关为 FE80::1 的路由。<br />
+delete route 3FFE::/16 &quot;Internet&quot; FE80::1<br />
+<br />
+<strong>dump</strong> 当在 netsh 环境中运行时，将网卡的 IPv6 配置转储到命令提示符窗口中。如果在批处理文件或脚本中使用，则可将其输出保存在文本文件中。<br />
+语法 netsh interface ipv6 dump &gt; [PathAndFileName]<br />
+参数<br />
+[ PathAndFileName] 指定该文件的保存位置和保存该配置的目标文件的名称。<br />
+<i><u>备注</u></i><br />
+&#8226; 获取文件输出后，可以通过 netsh exec 命令用相同的 IPv6 配置来配置其他计算机或恢复同一计算机的原始配置。 <br />
+&#8226; 该转储命令可保存所有的 IPv6 配置信息。例如，如果在接口上定义了 ISATAP 或 6to4 配置，dump 命令会将这些配置保存在文本文件中。<br />
+示例<br />
+第一个示例中，该命令在 netsh interface ipv6 命令提示符环境下以手动方式运行。IPv6 配置将显示在该命令提示符窗口中，可将其复制并粘贴到文本文件内。第二个示例中，dump 命令以批处理文件的方式运行，配置信息将被保存到 C:\Temp 下名为 Ipv6_conf.txt 的文本文件中。<br />
+dump<br />
+netsh interface ipv6 dump &gt; C:\temp\ipv6_conf.txt<br />
+<br />
+<strong>install</strong><br />
+安装 IPv6。<br />
+语法 install<br />
+<br />
+<strong><font color="Red">isatap</font></strong> 指定使用 netsh interface IPv6 isatap 的 isatap 环境。<br />
+语法 isatap<br />
+<i>注释</i><br />
+&#8226; IPv4 站点内的 IPv6 和 IPv4 节点间的通信将使用站点内自动隧道寻址协议 (ISATAP)。这在 Internet 草案“Intra-Site Automatic Tunnel Addressing Protocol (ISATAP)”(draft-ietf-ngtrans-isatap-00.txt) 中有描述。详细信息，请参阅在 IPv4 网络的不同子网节点之间的 IPv6 通讯。<br />
+<br />
+<strong>renew</strong> 重新启动 IPv6 接口。<br />
+语法 renew [[interface=]String]<br />
+参数 [[ interface=]String] 指定接口名称或索引。<br />
+示例 renew &quot;Private&quot;<br />
+<br />
+<strong><font color="Red">reset</font></strong> 重设 IPv6 配置状态。<br />
+语法 reset<br />
+<br />
+<strong><font color="Red">set address</font></strong> 在指定的接口上修改 IPv6 地址。时间值可以表示为天 (d)、小时 (h)、分钟 (m) 及秒 (s)。例如，2d 表示两天。<br />
+语法<br />
+set address [[interface=]String] [address=]IPv6Address [[type=]{unicast | anycast}] [[validlifetime=]{Integer | infinite}] [[preferredlifetime=]{Integer | infinite}] [[store=]{active | persistent}]<br />
+参数 <br />
+[[ interface=]String] 指定接口名称或索引。<br />
+[ address=]IPv6Address 必需。指定要修改的 IPv6 地址。<br />
+[[ type=]{unicast | anycast}] 指定是将该地址标记为单播地址 (unicast) 还是任何播地址 (anycast)。默认选择为 unicast。<br />
+[[ validlifetime=]{Integer | infinite}] 指定地址有效的生存时间。默认值为 infinite。<br />
+[[ preferredlifetime=]{Integer | infinite}] 指定地址处于首选状态的生存时间。默认值为 infinite。<br />
+[[ store=]{active | persistent}] 指定更改是仅持续到下次启动为止 (active)，还是始终保持 (persistent)。默认选择为 persistent。<br />
+示例<br />
+本示例命令将名为“Private”的接口上的地址 FE80::2 设为任何播地址。<br />
+set address &quot;Private&quot; FE80::2 anycast<br />
+<br />
+<strong>set global</strong> 修改全局配置参数。<br />
+语法 set global [[defaultcurhoplimit=]Integer] [neighborcachelimit=]Integer [[routecachelimit=]Integer] [[reassemblylimit=]Integer] [[store=]{active | persistent}]<br />
+参数<br />
+[[ defaultcurhoplimit=]Integer] 指定所发送数据包的默认跃点限制。<br />
+[ neighborcachelimit=]Integer 必需。指定邻居缓存项的最大数量。<br />
+[[ routecachelimit=]Integer] 指定路由缓存项的最大数量。<br />
+[[ reassemblylimit=]Integer] 指定重组缓冲区的最大大小。<br />
+[[ store=]{active | persistent}] 指定更改是仅持续到下次启动为止 (active)，还是始终保持 (persistent)。默认选择为 persistent。<br />
+示例<br />
+本示例命令将为计算机中所有启用了 IPv6 的接口设置全局参数。它将默认的跃点限制设为 32，将邻居缓存项的最大数量设为 100，将路由缓存项的最大数量设为 100,000。<br />
+set global 32 100 100000<br />
+<br />
+<strong><font color="Red">set interface</font></strong> 修改接口配置参数。<br />
+语法<br />
+set interface [[interface=]String] [[forwarding=]{enabled | disabled}] [[advertise=]{enabled | disabled}] [[mtu=]Integer] [[siteid=]Integer] [[metric=]Integer] [[firewall=]{enabled | disabled}] [[siteprefixlength=]Integer] [[store=]{active | persistent}]<br />
+参数<br />
+[[ interface=]String] 指定接口名称或索引。<br />
+[[ forwarding=]{enabled | disabled}] 指定到达该接口的数据包是否可以转发到其他接口。默认选择为 disabled。<br />
+[[ advertise=]{enabled | disabled}] 指定是否在此接口上发送路由通告。默认选择为 disabled。<br />
+[[ mtu=]Integer] 指定此接口的 MTU。默认的 MTU 是该链接本来的 MTU。<br />
+[[ siteid=]Integer] 指定站点范围区域的标识符。<br />
+[[ metric=]Integer] 指定接口标记，该标记将添加到接口上的所有路由的路由指标中。<br />
+[[ firewall=]{enabled | disabled}] 指定是否在防火墙模式下工作。<br />
+[[ siteprefixlength=]Integer] 指定整个站点的全局前缀的默认长度。<br />
+[[ store=]{active | persistent}] 指定更改是仅持续到下次启动为止 (active)，还是始终保持 (persistent)。默认选择为 persistent。<br />
+示例<br />
+本示例命令将使用名称“Private”、站点 ID 2 以及标记 2 来设置接口。其他所有参数值都保留为默认值。<br />
+set interface &quot;Private&quot; siteid=2 metric=2<br />
+<br />
+<strong>set mobility</strong> 修改移动性配置参数。<br />
+语法<br />
+set mobility [[security=]{enabled | disabled}] [[bindingcachelimit=]Integer] [[correspondentnode=]enabled | disabled] [[store=]{active | persistent}]<br />
+参数<br />
+[[ security=]{enabled | disabled}] 指定是否必须保护绑定更新。<br />
+[[ bindingcachelimit=]Integer] 指定绑定缓存项的最大数量。<br />
+[[ correspondentnode=]enabled | disabled] 指定将“通信节点”的功能设为 enabled 还是默认的 disabled。<br />
+[[ store=]{active | persistent}] 指定更改是仅持续到下次启动为止 (active)，还是始终保持 (persistent)。默认选择为 persistent。<br />
+示例<br />
+set mobility security=disabled bindingcachelimit=1000 corr=enabled<br />
+<br />
+<strong><font color="Red">set prefixpolicy</font></strong> 修改指定前缀的源和目标地址选择策略。<br />
+语法 set prefixpolicy [prefix=]IPv6Address/Integer [precedence=]Integer [label=]Integer [[store=]{active | persistent}]<br />
+参数<br />
+[ prefix=]IPv6Address/Integer 必需。指定要添加到策略表中的策略的前缀。Integer 指定前缀的长度。<br />
+[ precedence=]Integer 必需。指定用于对策略表中的目标地址进行排序的优先值。<br />
+[ label=]Integer 必需。指定允许要求一个特定的源地址前缀与目标地址前缀一起使用的策略的标签值。<br />
+[[ store=]{active | persistent}] 指定更改是仅持续到下次启动为止 (active)，还是始终保持 (persistent)。默认选择为 persistent。<br />
+示例<br />
+本示例命令使用优先值 3 和标签值 4 在策略表中为前缀 ::/96 设置策略。<br />
+set prefixpolicy ::/96 3 4<br />
+<br />
+<strong>set privacy</strong> 修改与临时地址生成有关的参数。如果指定了 randomtime=，则不使用 maxrandomtime=。时间值可以表示为天 (d)、小时 (h)、分钟 (m) 及秒 (s)。例如，2d 表示两天。<br />
+语法<br />
+set privacy [[state=]{enabled | disabled}] [[maxdadattempts=]Integer] [[maxvalidlifetime=]Integer] [[maxpreferredlifetime=]Integer] [[regeneratetime=]Integer] [[maxrandomtime=]Integer] [[randomtime=]Integer] [[store=]{active | persistent}]<br />
+参数<br />
+[[ state=]{enabled | disabled}] 指定是否启用临时地址。<br />
+[[ maxdadattempts=]Integer] 指定尝试重复地址检测的次数。默认值为 5。<br />
+[[ maxvalidlifetime=]Integer] 指定临时地址有效的最长生存时间。默认值为 7d（7 天）。<br />
+[[ maxpreferredlifetime=]Integer] 指定匿名处于首选状态的最长生存时间。默认值为 1d（1 天）。<br />
+[[ regeneratetime=]Integer] 指定生成新地址后到决定不使用临时地址时所经过的时间。默认值为 5s（5 秒）。<br />
+[[ maxrandomtime=]Integer] 指定在启动时计算随机延迟时所使用的上限。默认值为 10m（10 分钟）。<br />
+[[ randomtime=]Integer] 指定要使用的时间值，而不是启动时生成的值。<br />
+[[ store=]{active | persistent}] 指定更改是仅持续到下次启动为止 (active)，还是始终保持 (persistent)。默认选择为 persistent。<br />
+<br />
+<strong><font color="Red">set route</font></strong> 修改路由参数。时间值可以表示为天 (d)、小时 (h)、分钟 (m) 及秒 (s)。例如，2d 表示两天。<br />
+语法<br />
+set route [prefix=]IPv6Address/Integer [[interface=]String] [[nexthop=]IPv6Address] [[siteprefixlength=]Integer] [[metric=]Integer] [publish=]{no | yes | immortal}] [[validlifetime=]{Integer | infinite}] [[preferredlifetime=]{Integer | infinite}] [[store=]{active | persistent}]<br />
+参数<br />
+[ prefix=]IPv6Address/Integer 必需。指定要修改的路由的前缀 (IPv6Address) 和前缀长度 (Integer)。<br />
+[[ interface=]String] 指定接口名称或索引。<br />
+[[ nexthop=]IPv6Address] 指定网关地址（如果前缀不在链路上）。<br />
+[[ siteprefixlength=]Integer] 指定整个站点的前缀长度（如果前缀不在链路上）。<br />
+[[ metric=]Integer] 指定路由指标。<br />
+[[ publish=]{no | yes | immortal}] 指定路由在“路由公布”中是公布 (yes)、无限生存期公布 (immortal) 还是不公布 (no)。默认选择为 no。<br />
+[[ validlifetime=]{Integer | infinite}] 指定路由有效的生存时间。默认值为 infinite。<br />
+[[ preferredlifetime=]{Integer | infinite}] 指定路由处于首选状态的生存时间。默认值为 infinite。<br />
+[[ store=]{active | persistent}] 指定更改是仅持续到下次启动为止 (active)，还是始终保持 (persistent)。默认选择为 persistent。<br />
+示例<br />
+本示例命令在名为“Internet”的接口上设置了一个路由。该路由的前缀是 3FFE::，长度为 16 位。nexthop= 参数定义的网关地址为 FE80::1。<br />
+set route 3FFE::/16 &quot;Internet&quot; FE80::1<br />
+<br />
+<strong><font color="Red">set state</font></strong> 启用或禁用 IPv4 兼容性。所有参数的默认值都是“禁用”。<br />
+语法<br />
+set state [[6over4=]{enabled | disabled | default}] [[v4compat=]{enabled | disabled | default}]<br />
+参数<br />
+[[6over4=]{enabled| disabled| default}]<br />
+指定是否创建 6over4 接口要禁用并删除 6over4 兼容接口，请指定 default。要禁用 6over4 兼容接口但不删除它们，请指定 disabled。<br />
+[[ v4compat=]{ enabled| disabled| default}] <br />
+指定是否创建 IPv4 兼容接口。要禁用并删除 IPv4 兼容接口，请指定 default。要禁用 IPv4 兼容接口但不删除它们，请指定 disabled。<br />
+示例<br />
+第一个示例命令将禁用 IPv4 兼容地址，并删除此前的任何现有接口。而第二个命令示例会启用 IPv4 兼容地址。<br />
+<br />
+<strong>set state default</strong> <br />
+set state 6over4=disabled v4compat=enabled<br />
+<br />
+<font color="Red"><strong>show address</strong></font> 显示所有 IPv6 地址或指定接口上的所有地址。<br />
+语法 show address [[interface=]String] [[level=]{normal | verbose}] [[store=]{active | persistent}]<br />
+参数<br />
+[[ interface=]String] 指定接口名称或索引。<br />
+[[ level=]{normal | verbose}] 指定每个接口显示一行信息 (normal) 还是同时显示其他信息 (verbose)。当未指定接口时，默认选择为 normal。当指定接口时，默认选择为 verbose。<br />
+[[ store=]{active | persistent}] 指定是显示活动 (active) 地址还是持久性 (persistent) 地址。默认选择为 active。<br />
+<br />
+<strong>show bindingcacheentries</strong> 显示所有的绑定缓存项。<br />
+语法 show bindingcacheentries<br />
+<br />
+<strong>show destinationcache</strong> 显示目标缓存项。如果指定了接口，则仅显示该接口上的缓存。如果同时指定了地址，则仅显示该目标的缓存项。<br />
+语法 show destinationcache [[interface=]String] [[address=]IPv6Address]<br />
+参数<br />
+[[ interface=]String] 指定接口名称或索引。<br />
+[[ address=]IPv6Address] 指定目标地址。<br />
+<br />
+<strong>show dns</strong> 显示指定接口或所有接口的 DNS 服务器配置。<br />
+语法 show dns [[interface=]String] <br />
+参数<br />
+[[ interface=]String] 按名称指定要显示其已配置的 DNS 服务器 IPv6 地址的接口。如果未指定接口，将显示所有接口的服务器。<br />
+示例<br />
+本示例命令将显示在“Local Area Connection”接口上配置的 DNS 服务器 IPv6 地址。<br />
+show dns &quot;Local Area Connection&quot;<br />
+<br />
+<strong>show global</strong> 显示全局配置参数。<br />
+语法 show global [[store=]{active | persistent}]<br />
+参数<br />
+[[ store=]{active | persistent}]&nbsp;&nbsp;指定是显示活动 (active) 还是持久性 (persistent) 的信息。默认选择为 active。<br />
+<br />
+<strong><font color="Red">show interface</font> </strong>显示有关所有接口或有关指定接口的信息。<br />
+语法 show interface [[interface=]String] [[level=]{normal | verbose}] [[store=]{active | persistent}]<br />
+参数<br />
+[[ interface=]String] 指定接口名称或索引。<br />
+[[ level=]{normal | verbose}] 指定每个接口显示一行信息 (normal) 还是同时显示其他信息 (verbose)。当未指定接口时，默认选择为 normal。当指定接口时，默认选择为 verbose。<br />
+[[ store=]{active | persistent}] 指定是显示活动 (active) 接口还是持久性 (persistent) 接口。默认选择为 active。<br />
+<br />
+<strong>show joins</strong> 显示所有的 IPv6 多播地址或指定接口上的所有多播地址。<br />
+语法 show joins [[interface=]String] [[level=]{normal | verbose}]<br />
+参数<br />
+[[ interface=]String] 指定接口名称或索引。<br />
+[[ level=]{normal | verbose}] 指定每个接口显示一行信息 (normal) 还是同时显示其他信息 (verbose)。当未指定接口时，默认选择为 normal。当指定接口时，默认选择为 verbose。<br />
+<br />
+<strong>show mobility</strong> 显示移动性配置参数。<br />
+语法 show mobility [[store=]{active | persistent}]<br />
+参数<br />
+[[ store=]{active | persistent}] 指定是显示活动 (active) 还是持久性 (persistent) 的信息。默认选择为 active。<br />
+<br />
+<strong>show neighbors</strong> 显示邻居缓存项。如果指定了接口，则仅显示该接口上的缓存。如果同时指定了地址，则仅显示该邻居缓存项。<br />
+语法 show neighbors [[interface=]String] [[address=]IPv6Address]<br />
+参数<br />
+[[ interface=]String] 指定接口名称或索引。<br />
+[[ address=]IPv6Address] 指定邻居地址。<br />
+<br />
+<strong>show prefixpolicy</strong> 显示在源和目标地址选择中使用的前缀策略表项。<br />
+语法 show prefixpolicy [[store=]{active | persistent}] <br />
+参数<br />
+[[ store=]{active | persistent}] 指定是显示活动 (active) 还是持久性 (persistent) 的信息。默认选择为 active。<br />
+<br />
+<strong>show privacy</strong> 显示隐私配置参数。<br />
+语法 show privacy [[store=]{active | persistent}]<br />
+参数<br />
+[[ store=]{active | persistent}] 指定是显示活动 (active) 还是持久性 (persistent) 的信息。默认选择为 active。<br />
+<br />
+<strong><font color="Red">show routes</font></strong> 显示路由表项。<br />
+语法 show routes [[level=]{normal | verbose}] [[store=]{active | persistent}]<br />
+参数<br />
+[[ level=]{normal | verbose}] 指定是仅显示正常路由 (normal) 还是用于环回的路由 (verbose)。默认选择为 normal。<br />
+[[ store=]{active | persistent}]&nbsp;&nbsp;指定是显示活动 (active) 路由还是持久性 (persistent) 路由。默认选择为 active。<br />
+<br />
+<strong>show siteprefixes</strong> 显示站点前缀表。<br />
+语法 show siteprefixes<br />
+<br />
+<strong><font color="Red">uninstall</font></strong> 卸载 IPv6。<br />
+语法 uninstall</td></tr></table>
+
+
+</div>
+<div id="comment_15986909" class="cm">
+</div>
+
+<div id="post_rate_div_15986909"></div>
+</div>
+</div>
+
+</td></tr>
+<tr><td class="plc plm">
+<div class="sign" style="max-height:200px;maxHeightIE:200px;"><img src="http://asset.neubt.com/attachments/day_120619/12061921494c23f415c443f284.jpg" onload="thumbImg(this)" alt="" /><img width="500" height="300" src="http://asset.neubt.com/attachments/day_120619/1206192153863e0035c574651d.png" border="0" alt="" /></div>
+<div class="a_pb"><a href="1193867" target="_blank" ><font face="微软雅黑" color="indianred" size=2><b> =-=★六维空间常见问题解答（第三版）★=-= </b></font></a></div></td>
+</tr>
+<tr id="_postposition15986909"></tr>
+<tr>
+<td class="pls"></td>
+<td class="plc" style="overflow:visible;">
+<div class="po hin">
+<div class="pob cl">
+<em>
+</em>
+
+<p>
+<a href="javascript:;" id="mgc_post_15986909" onmouseover="showMenu(this.id)" class="showmenu">使用道具</a>
+<a href="javascript:;" onclick="showWindow('miscreport15986909', 'misc.php?mod=report&rtype=post&rid=15986909&tid=784528&fid=129', 'get', -1);return false;">举报</a>
+</p>
+
+<ul id="mgc_post_15986909_menu" class="p_pop mgcmn" style="display: none;">
+<li><a href="home.php?mod=magic&amp;mid=namepost&amp;idtype=pid&amp;id=15986909:784528" id="a_namepost_15986909" onclick="showWindow(this.id, this.href)"><img src="static/image/magic/namepost.small.gif" />显身卡</a><li>
+</ul>
+<script type="text/javascript" reload="1">checkmgcmn('post_15986909')</script>
+</div>
+</div>
+</td>
+</tr>
+<tr class="ad">
+<td class="pls">
+</td>
+<td class="plc">
+</td>
+</tr>
+</table>
+<script type="text/javascript" reload="1">
+aimgcount[15986909] = ['2646888','2646948'];
+attachimggroup(15986909);
+attachimgshow(15986909);
+var aimgfid = 0;
+</script>
+</div><div id="post_15987178" ><table id="pid15987178" class="plhin" summary="pid15987178" cellspacing="0" cellpadding="0">
+<tr>
+<td class="pls" rowspan="2">
+<div id="favatar15987178" class="pls favatar">
+ <div class="pi">
+<div class="authi"><a href="home.php?mod=space&amp;uid=134562" target="_blank" class="xw1" style="color: magenta">hj2514791</a>
+</div>
+</div>
+<div class="p_pop blk bui card_gender_1" id="userinfo15987178" style="display: none; margin-top: -11px;">
+<div class="m z">
+<div id="userinfo15987178_ma"></div>
+</div>
+<div class="i y">
+<div>
+<strong><a href="home.php?mod=space&amp;uid=134562" target="_blank" class="xi2" style="color: magenta">hj2514791</a></strong>
+<em>当前离线</em>
+</div><dl class="cl">
+<dt>UID</dt><dd><a href="?134562" target="_blank" class="xi2">134562</a></dd>
+<dt>积分</dt><dd><a href="home.php?mod=space&uid=134562&do=profile" target="_blank" class="xi2">1028009</a></dd>
+
+<dt>威望</dt><dd>4 </dd>
+<dt>浮云</dt><dd>150868 </dd>
+<dt>上传</dt><dd>11449864 MB</dd>
+<dt>下载</dt><dd>3625856 MB</dd>
+<dt>贡献</dt><dd>1416 </dd>
+<dt>功勋</dt><dd>0 点</dd>
+<dt>帖子</dt><dd><a href="home.php?mod=space&uid=134562&do=thread&type=reply&view=me&from=space" target="_blank" class="xi2">19336</a></dd>
+<dt>主题</dt><dd><a href="home.php?mod=space&uid=134562&do=thread&type=thread&view=me&from=space" target="_blank" class="xi2">990</a></dd>
+<dt>注册时间</dt><dd>2010-5-18</dd>
+<dt>最后登录</dt><dd>2016-8-28</dd>
+<dt></dt><dd></dd>
+<dt>QQ</dt><dd><a href="http://wpa.qq.com/msgrd?V=3&Uin=229425985&Site=六维空间 - 教育科研网分享测试平台&Menu=yes&from=discuz" target="_blank" title="发起QQ聊天"><img src="static//image/common/qq_big.gif" alt="QQ" style="margin:0px;"/></a></dd>
+<dt></dt><dd></dd>
+<dt>个人主页</dt><dd><a href="" target="_blank"></a></dd>
+
+
+</dl><div class="imicn">
+<a href="http://wpa.qq.com/msgrd?V=3&amp;Uin=229425985&amp;Site=六维空间 - 教育科研网分享测试平台&amp;Menu=yes&amp;from=discuz" target="_blank" title="QQ"><img src="static/image/common/qq.gif" alt="QQ" /></a><a href="home.php?mod=space&amp;uid=134562&amp;do=profile" target="_blank" title="查看详细资料"><img src="static/image/common/userinfo.gif" alt="查看详细资料" /></a>
+</div>
+<div id="avatarfeed"><span id="threadsortswait"></span></div>
+</div>
+</div>
+<div>
+<div class="avatar" onmouseover="showauthor(this, 'userinfo15987178')"><a href="home.php?mod=space&amp;uid=134562" class="avtm" target="_blank"><img src="http://bt.neu6.edu.cn/uc_server/data/avatar/000/13/45/62_avatar_middle.jpg" onerror="this.onerror=null;this.src='http://bt.neu6.edu.cn/uc_server/images/noavatar_middle.gif'" /></a></div>
+</div>
+<div class="tns xg2"><table cellspacing="0" cellpadding="0"><th><p><a href="home.php?mod=space&uid=134562&do=thread&type=thread&view=me&from=space" class="xi2">990</a></p>主题</th><th><p><a href="home.php?mod=space&uid=134562&do=thread&type=reply&view=me&from=space" class="xi2"><span title="19336">1万</span></a></p>帖子</th><td><p><a href="home.php?mod=space&uid=134562&do=profile" class="xi2"><span title="1028009">102万</span></a></p>积分</td></table></div>
+<p style="transform:translate(-8px)"><a href="home.php?mod=spacecp&amp;ac=usergroup&amp;gid=37" target="_blank"><img src="/data/attachment/common/a5/common_37_usergroup_icon.gif" alt="" class="vm" /></a></p>
+<p><em><a href="home.php?mod=spacecp&amp;ac=usergroup&amp;gid=37" target="_blank"><font color="magenta">★资深版主★</font></a></em></p>
+
+
+<p><span><img src="static/image/common/star_level2.gif" alt="Rank: 14" /><img src="static/image/common/star_level2.gif" alt="Rank: 14" /><img src="static/image/common/star_level2.gif" alt="Rank: 14" /><img src="static/image/common/star_level1.gif" alt="Rank: 14" /><img src="static/image/common/star_level1.gif" alt="Rank: 14" /></span></p>
+
+
+
+<dl class="pil cl">
+<dt>积分</dt><dd><a href="home.php?mod=space&uid=134562&do=profile" target="_blank" class="xi2">1028009</a></dd>
+<dt>威望</dt><dd>4 </dd>
+<dt>浮云</dt><dd>150868 </dd>
+<dt>上传</dt><dd id="upupup">11449864 MB</dd>
+<dt>贡献</dt><dd>1416 </dd>
+<dt>功勋</dt><dd>0 点</dd>
+<dt>最后登录</dt><dd>2016-8-28</dd>
+</dl>
+<p class="md_ctrl"><a href="home.php?mod=medal"><img id="md_15987178_93" src="static/image/common/medal3.gif" alt="江湖新秀荣誉勋章" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_93_menu', 'pos':'12!'})" /><img id="md_15987178_94" src="static/image/common/medal6.gif" alt="杰出贡献勋章" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_94_menu', 'pos':'12!'})" /><img id="md_15987178_42" src="static/image/common/medal22.gif" alt="超级幸运勋章" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_42_menu', 'pos':'12!'})" /><img id="md_15987178_49" src="static/image/common/medal37.gif" alt="互助先锋" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_49_menu', 'pos':'12!'})" /><img id="md_15987178_40" src="static/image/common/medal20.gif" alt="贴图大师" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_40_menu', 'pos':'12!'})" /><img id="md_15987178_39" src="static/image/common/medal14.gif" alt="六维优秀会员" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_39_menu', 'pos':'12!'})" /><img id="md_15987178_9" src="static/image/common/medal9.gif" alt="论坛财主勋章" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_9_menu', 'pos':'12!'})" /><img id="md_15987178_72" src="static/image/common/medal19.gif" alt="爆楼队队员" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_72_menu', 'pos':'12!'})" /></a></p>
+<dl class="pil cl"><a href="http://wpa.qq.com/msgrd?V=3&Uin=229425985&Site=六维空间 - 教育科研网分享测试平台&Menu=yes&from=discuz" target="_blank" title="发起QQ聊天"><img src="static//image/common/qq_big.gif" alt="QQ" style="margin:0px;"/></a></dl>
+<ul class="xl xl2 o cl">
+<li class="addflw">
+<a href="home.php?mod=spacecp&amp;ac=follow&amp;op=add&amp;hash=7a6d56f3&amp;fuid=134562" id="followmod_134562" title="收听TA" class="xi2" onclick="showWindow('followmod', this.href, 'get', 0);">收听TA</a>
+</li>
+<li class="pm2"><a href="home.php?mod=spacecp&amp;ac=pm&amp;op=showmsg&amp;handlekey=showmsg_134562&amp;touid=134562&amp;pmid=0&amp;daterange=2&amp;pid=15987178&amp;tid=784528" onclick="showWindow('sendpm', this.href);" title="发消息" class="xi2">发消息</a></li>
+</ul>
+</div>
+</td>
+<td class="plc">
+<div class="pi">
+<strong>
+<a href="forum.php?mod=redirect&goto=findpost&ptid=784528&pid=15987178"   id="postnum15987178" onclick="setCopy(this.href, '帖子地址复制成功');return false;">
+<em>4</em>楼</a>
+</strong>
+<div class="pti">
+<div class="pdbt">
+</div>
+<div class="authi">
+<img class="authicn vm" id="authicon15987178" src="static/image/common/ico_lz.png" />
+&nbsp;楼主<span class="pipe">|</span>
+<em id="authorposton15987178">发表于 2011-9-1 09:20</em>
+<span class="pipe">|</span>
+<a href="forum.php?mod=viewthread&amp;tid=784528&amp;page=1&amp;authorid=134562" rel="nofollow">只看该作者</a>
+</div>
+</div>
+</div><div class="pct"><div class="pcb">
+<div class="t_fsz">
+<table cellspacing="0" cellpadding="0"><tr><td class="t_f" id="postmessage_15987178">
+<i class="pstatus"> 本帖最后由 hj2514791 于 2011-9-2 01:34 编辑 </i><br />
+<br />
+<font face="微软雅黑"><strong><font color="Olive"><font size="5">写在前头：其实netsh很容易学会，一通百通只要知道命令结构就可以对其他的进行分析 了解前几个就能知道其他命令的含义了</font></font></strong></font><br />
+<br />
+===============================================================================<br />
+<br />
+<font size="4"><strong><font color="Purple">④</font><font color="Red">常用且重要命令图文详解</font></strong></font><br />
+<hr class="l" /><font color="Red"><strong>add address</strong></font> 在指定的接口上添加 IPv6 地址。时间值可以表示为天 (d)、小时 (h)、分钟 (m) 及秒 (s)。例如，2d 表示两天。<br />
+语法<br />
+add address [[interface=]String] [address=]IPv6Address [[type=]{unicast | anycast}] [[validlifetime=]{Integer | infinite}] [[preferredlifetime=]{Integer | infinite}] [[store=]{active | persistent}]<br />
+参数<br />
+[[ interface=]String] 指定接口名称或索引。<br />
+[ address=]IPv6Address 必需。指定要添加的 IPv6 地址<br />
+[[ type=]{unicast | anycast}]&nbsp;&nbsp;指定是添加单播地址 (unicast) 还是任何播地址 (anycast)。默认选择为 unicast<br />
+[[ validlifetime=]{Integer | infinite}] 指定地址有效的生存时间。默认值为 infinite<br />
+[[ preferredlifetime=]{Integer | infinite}] 指定地址处于首选状态的生存时间。默认值为 infinite。<br />
+[[ store=]{active | persistent}] 指定更改是仅持续到下次启动为止 (active)，还是始终保持 (persistent)。默认选择为 persistent。<br />
+示例<br />
+本示例命令将 IPv6 地址 FE80::2 添加到名为“Private”的接口。<br />
+add address &quot;Private&quot; FE80::2<br />
+<font color="Black"><div class="quote"><blockquote>即添加ipv6地址，通常绑定ipv6地址均要用到</blockquote></div></font><br />
+<font color="Black"><div class="quote"><blockquote>其中参数interface即int，接口索引也就是一个接口代号；address即要添加的地址；type即地址类型，通常不用写；</font><br />
+<font color="Black">validlifetime即地址使用时间，通常不用写；preferrdlifetime即处于高使用等级的时长，通常不用写；store即生效方式，一次有效还是永久有效，通常保持默认</blockquote></div></font><br />
+<font color="Black"><div class="quote"><blockquote>对于示例解释：private即是一个int代号，其中冒号可以省略</blockquote></div></font><br />
+看图实例
+<ignore_js_op>
+
+<img id="aimg_2647147" aid="2647147" src="static/image/common/none.gif" zoomfile="/data/attachment/forum/day_110901/110901095738236a5d37def35e.jpg" file="/data/attachment/forum/day_110901/110901095738236a5d37def35e.jpg" class="zoom" onclick="zoom(this, this.src, 0, 0, 0)" width="643" id="aimg_2647147" inpost="1" onmouseover="showMenu({'ctrlid':this.id,'pos':'12'})" />
+
+<div class="tip tip_4 aimg_tip" id="aimg_2647147_menu" style="position: absolute; display: none" disautofocus="true">
+<div class="xs0">
+<p><strong>QQ截图20110901095016.jpg</strong> <em class="xg1">(82.17 KB, 下载次数: 25)</em></p>
+<p>
+<a href="forum.php?mod=attachment&amp;aid=MjY0NzE0N3xiZTVmZmE5NnwxNTE0MzU4MjkxfDczMzQ2OHw3ODQ1Mjg%3D&amp;nothumb=yes" target="_blank">下载附件</a>
+
+</p>
+
+<p class="xg1 y">2011-9-1 09:57 上传</p>
+
+</div>
+<div class="tip_horn"></div>
+</div>
+
+</ignore_js_op>
+
+<ignore_js_op>
+
+<img id="aimg_2647148" aid="2647148" src="static/image/common/none.gif" zoomfile="/data/attachment/forum/day_110901/11090109573ecfc6f5c0cc8829.jpg" file="/data/attachment/forum/day_110901/11090109573ecfc6f5c0cc8829.jpg" class="zoom" onclick="zoom(this, this.src, 0, 0, 0)" width="649" id="aimg_2647148" inpost="1" onmouseover="showMenu({'ctrlid':this.id,'pos':'12'})" />
+
+<div class="tip tip_4 aimg_tip" id="aimg_2647148_menu" style="position: absolute; display: none" disautofocus="true">
+<div class="xs0">
+<p><strong>QQ截图20110901094957.jpg</strong> <em class="xg1">(69.15 KB, 下载次数: 26)</em></p>
+<p>
+<a href="forum.php?mod=attachment&amp;aid=MjY0NzE0OHw4MmQwZTQwNXwxNTE0MzU4MjkxfDczMzQ2OHw3ODQ1Mjg%3D&amp;nothumb=yes" target="_blank">下载附件</a>
+
+</p>
+
+<p class="xg1 y">2011-9-1 09:57 上传</p>
+
+</div>
+<div class="tip_horn"></div>
+</div>
+
+</ignore_js_op>
+<br />
+<hr class="l" /><font color="Red"><strong>add prefixpolicy</strong></font> 添加指定前缀的源和目标地址选择策略。<br />
+语法 add prefixpolicy [prefix=]IPv6Address/Integer [precedence=]Integer [label=]Integer [[store=]{active | persistent}]<br />
+参数<br />
+[ prefix=]IPv6Address/Integer 必需。指定要添加到策略表中的策略的前缀。Integer 指定前缀的长度。<br />
+[ precedence=]Integer 必需。指定用于对策略表中的目标地址进行排序的优先值。<br />
+[ label=]Integer 必需。指定允许要求一个特定的源地址前缀与目标地址前缀一起使用的策略的标签值。<br />
+[[ store=]{active | persistent}] 指定更改是仅持续到下次启动为止 (active)，还是始终保持 (persistent)。默认选择为 persistent。<br />
+示例<br />
+本示例命令为前缀 ::/96 添加前缀策略（优先值为 3，标签值为 4）。<br />
+add prefixpolicy ::/96 3 4<br />
+<font color="Black"><div class="quote"><blockquote>此处主要是给自动选址增加一个优先级，即添加一些限制条件</blockquote></div></font><br />
+<font color="Black"><div class="quote"><blockquote>prefix 即使要添加的条件，常用的优先选择2001开头的指令就是来自于此</blockquote></div></font><br />
+<font color="Black"><div class="quote"><blockquote>add prefixpolicy ::/96 3 4即前6段自动选择不受限制，v6地址有8段组成，每段16位，96表示前面的6段；3表示优先级，3比较高的优先级；4即使标签号类似于标号</blockquote></div></font><br />
+
+<ignore_js_op>
+
+<img id="aimg_2647347" aid="2647347" src="static/image/common/none.gif" zoomfile="/data/attachment/forum/day_110901/1109011021013a8e9dcbc55acb.jpg" file="/data/attachment/forum/day_110901/1109011021013a8e9dcbc55acb.jpg" class="zoom" onclick="zoom(this, this.src, 0, 0, 0)" width="646" id="aimg_2647347" inpost="1" onmouseover="showMenu({'ctrlid':this.id,'pos':'12'})" />
+
+<div class="tip tip_4 aimg_tip" id="aimg_2647347_menu" style="position: absolute; display: none" disautofocus="true">
+<div class="xs0">
+<p><strong>QQ截图20110901101449.jpg</strong> <em class="xg1">(101.11 KB, 下载次数: 24)</em></p>
+<p>
+<a href="forum.php?mod=attachment&amp;aid=MjY0NzM0N3wwMmViYzNlMHwxNTE0MzU4MjkxfDczMzQ2OHw3ODQ1Mjg%3D&amp;nothumb=yes" target="_blank">下载附件</a>
+
+</p>
+
+<p class="xg1 y">2011-9-1 10:21 上传</p>
+
+</div>
+<div class="tip_horn"></div>
+</div>
+
+</ignore_js_op>
+<br />
+<hr class="l" /><strong><font color="Red">add route</font></strong> 添加指定前缀的路由。时间值可以表示为天 (d)、小时 (h)、分钟 (m) 及秒 (s)。例如，2d 表示两天。<br />
+语法<br />
+add route [prefix=]IPv6Address/Integer [[interface=]String] [[nexthop=]IPv6Address] [[siteprefixlength=]Integer] [[metric=]Integer] [[publish=]{no | yes | immortal}] [[validlifetime=]{Integer | infinite}] [[preferredlifetime=]{Integer | infinite}] [[store=]{active | persistent}]<br />
+参数<br />
+[ prefix=]IPv6Address/Integer 必需。指定要添加路由的前缀。Integer 指定前缀的长度。<br />
+[[ interface=]String] 指定接口名称或索引。<br />
+[[ nexthop=]IPv6Address] 指定网关地址（如果前缀不在链路上）。<br />
+[[ siteprefixlength=]Integer] 指定整个站点的前缀长度（如果前缀不在链路上）。<br />
+[[ metric=]Integer] 指定路由指标。<br />
+[[ publish=]{no | yes | immortal}] 指定路由在“路由公布”中是公布 (yes)、无限生存期公布 (immortal) 还是不公布 (no)。默认选择为 no。<br />
+[[ validlifetime=]{Integer | infinite}] 指定路由有效的生存时间。默认值为 infinite。<br />
+[[ preferredlifetime=]{Integer | infinite}] 指定路由处于首选状态的生存时间。默认值为 infinite。<br />
+[[ store=]{active | persistent}] 指定更改是仅持续到下次启动为止 (active)，还是始终保持 (persistent)。默认选择为 persistent。<br />
+示例<br />
+这个示例命令在名为“Internet”、前缀为 3FFE::、前缀长度为 16 位 (3FFE::/16) 的接口上添加一个路由。nexthop 的值为 FE80::1。<br />
+<font color="Black"><div class="quote"><blockquote>route 即默认网关；prefix即刚才讲得前缀限制条件；interface即int接口名称；nexthop即默认网关地址，比较重要；siteprefixlength即网关位数</blockquote></div></font><br />
+<font color="Black"><div class="quote"><blockquote>add route 3FFE::/16 &quot;Internet&quot; FE80::1 即3ffe::/16限制前缀只能是3ffe；internet即为接口名称；fe80::1即为网关地址</blockquote></div></font><br />
+
+<ignore_js_op>
+
+<img id="aimg_2647390" aid="2647390" src="static/image/common/none.gif" zoomfile="/data/attachment/forum/day_110901/11090110512e36a92f48f4b7c2.jpg" file="/data/attachment/forum/day_110901/11090110512e36a92f48f4b7c2.jpg" class="zoom" onclick="zoom(this, this.src, 0, 0, 0)" width="664" id="aimg_2647390" inpost="1" onmouseover="showMenu({'ctrlid':this.id,'pos':'12'})" />
+
+<div class="tip tip_4 aimg_tip" id="aimg_2647390_menu" style="position: absolute; display: none" disautofocus="true">
+<div class="xs0">
+<p><strong>QQ截图20110901104734.jpg</strong> <em class="xg1">(158.83 KB, 下载次数: 24)</em></p>
+<p>
+<a href="forum.php?mod=attachment&amp;aid=MjY0NzM5MHwwZDQwNzVhMHwxNTE0MzU4MjkxfDczMzQ2OHw3ODQ1Mjg%3D&amp;nothumb=yes" target="_blank">下载附件</a>
+
+</p>
+
+<p class="xg1 y">2011-9-1 10:51 上传</p>
+
+</div>
+<div class="tip_horn"></div>
+</div>
+
+</ignore_js_op>
+
+<ignore_js_op>
+
+<img id="aimg_2647391" aid="2647391" src="static/image/common/none.gif" zoomfile="/data/attachment/forum/day_110901/1109011051c9ba771c25092a89.jpg" file="/data/attachment/forum/day_110901/1109011051c9ba771c25092a89.jpg" class="zoom" onclick="zoom(this, this.src, 0, 0, 0)" width="660" id="aimg_2647391" inpost="1" onmouseover="showMenu({'ctrlid':this.id,'pos':'12'})" />
+
+<div class="tip tip_4 aimg_tip" id="aimg_2647391_menu" style="position: absolute; display: none" disautofocus="true">
+<div class="xs0">
+<p><strong>QQ截图20110901104746.jpg</strong> <em class="xg1">(137.58 KB, 下载次数: 20)</em></p>
+<p>
+<a href="forum.php?mod=attachment&amp;aid=MjY0NzM5MXw5ODhhN2UyY3wxNTE0MzU4MjkxfDczMzQ2OHw3ODQ1Mjg%3D&amp;nothumb=yes" target="_blank">下载附件</a>
+
+</p>
+
+<p class="xg1 y">2011-9-1 10:51 上传</p>
+
+</div>
+<div class="tip_horn"></div>
+</div>
+
+</ignore_js_op>
+<br />
+<br />
+<hr class="l" /><font color="Red"><strong>delete address</strong></font> 在指定的接口上修改 IPv6 地址。<br />
+语法 delete address [[interface=]String] [address=]IPv6Address [[store=]{active | persistent}]<br />
+参数<br />
+[[ interface=]String] 指定接口名称或索引。<br />
+[ address=]IPv6Address 必需。指定要删除的 IPv6 地址。<br />
+[[ store=]{active | persistent}] 指定删除是仅持续到下次启动 (active) 还是始终保持 (persistent)。默认选择为 persistent。<br />
+示例<br />
+本示例命令从名为“Private”的接口中删除地址 FE80::2。<br />
+delete address &quot;Private&quot; FE80::2<br />
+<font color="Black"><div class="quote"><blockquote>delete address与add address类似，此处不做详细解答，直接上图</blockquote></div></font><br />
+
+<ignore_js_op>
+
+<img id="aimg_2647414" aid="2647414" src="static/image/common/none.gif" zoomfile="/data/attachment/forum/day_110901/1109011107ef108012975e3e09.jpg" file="/data/attachment/forum/day_110901/1109011107ef108012975e3e09.jpg" class="zoom" onclick="zoom(this, this.src, 0, 0, 0)" width="645" id="aimg_2647414" inpost="1" onmouseover="showMenu({'ctrlid':this.id,'pos':'12'})" />
+
+<div class="tip tip_4 aimg_tip" id="aimg_2647414_menu" style="position: absolute; display: none" disautofocus="true">
+<div class="xs0">
+<p><strong>QQ截图20110901110054.jpg</strong> <em class="xg1">(160.6 KB, 下载次数: 19)</em></p>
+<p>
+<a href="forum.php?mod=attachment&amp;aid=MjY0NzQxNHw4MTU0Yjg2ZXwxNTE0MzU4MjkxfDczMzQ2OHw3ODQ1Mjg%3D&amp;nothumb=yes" target="_blank">下载附件</a>
+
+</p>
+
+<p class="xg1 y">2011-9-1 11:07 上传</p>
+
+</div>
+<div class="tip_horn"></div>
+</div>
+
+</ignore_js_op>
+
+<ignore_js_op>
+
+<img id="aimg_2647415" aid="2647415" src="static/image/common/none.gif" zoomfile="/data/attachment/forum/day_110901/11090111077ba05a99a56f0629.jpg" file="/data/attachment/forum/day_110901/11090111077ba05a99a56f0629.jpg" class="zoom" onclick="zoom(this, this.src, 0, 0, 0)" width="647" id="aimg_2647415" inpost="1" onmouseover="showMenu({'ctrlid':this.id,'pos':'12'})" />
+
+<div class="tip tip_4 aimg_tip" id="aimg_2647415_menu" style="position: absolute; display: none" disautofocus="true">
+<div class="xs0">
+<p><strong>QQ截图20110901110113.jpg</strong> <em class="xg1">(135.7 KB, 下载次数: 18)</em></p>
+<p>
+<a href="forum.php?mod=attachment&amp;aid=MjY0NzQxNXwxYzEwNDZkZHwxNTE0MzU4MjkxfDczMzQ2OHw3ODQ1Mjg%3D&amp;nothumb=yes" target="_blank">下载附件</a>
+
+</p>
+
+<p class="xg1 y">2011-9-1 11:07 上传</p>
+
+</div>
+<div class="tip_horn"></div>
+</div>
+
+</ignore_js_op>
+<br />
+<hr class="l" /><font color="Red"><strong>delete route</strong></font> 删除 IPv6 路由。<br />
+语法 delete route [prefix=]IPv6Address/Integer [[interface=]String] [[nexthop=]IPv6Address] [[store=]{active | persistent}]<br />
+参数<br />
+[ prefix=]IPv6Address/Integer 必需。指定要删除的路由的前缀。<br />
+[[ interface=]String] 指定接口名称或索引。<br />
+[[ nexthop=]IPv6Address] 指定网关地址（如果前缀不在链路上）。<br />
+[[ store=]{active | persistent}] 指定删除是仅持续到下次启动 (active) 还是始终保持 (persistent)。默认选择为 persistent。<br />
+示例<br />
+本示例命令将从名为“Internet”的接口删除前缀为 3FFE::/16、网关为 FE80::1 的路由。<br />
+delete route 3FFE::/16 &quot;Internet&quot; FE80::1<br />
+<font color="Black"><div class="quote"><blockquote>同上直接上图</blockquote></div></font><br />
+
+<ignore_js_op>
+
+<img id="aimg_2647422" aid="2647422" src="static/image/common/none.gif" zoomfile="/data/attachment/forum/day_110901/11090111146762012b8dc19eed.jpg" file="/data/attachment/forum/day_110901/11090111146762012b8dc19eed.jpg" class="zoom" onclick="zoom(this, this.src, 0, 0, 0)" width="648" id="aimg_2647422" inpost="1" onmouseover="showMenu({'ctrlid':this.id,'pos':'12'})" />
+
+<div class="tip tip_4 aimg_tip" id="aimg_2647422_menu" style="position: absolute; display: none" disautofocus="true">
+<div class="xs0">
+<p><strong>QQ截图20110901111000.jpg</strong> <em class="xg1">(151.55 KB, 下载次数: 15)</em></p>
+<p>
+<a href="forum.php?mod=attachment&amp;aid=MjY0NzQyMnw5M2VjZjg4N3wxNTE0MzU4MjkxfDczMzQ2OHw3ODQ1Mjg%3D&amp;nothumb=yes" target="_blank">下载附件</a>
+
+</p>
+
+<p class="xg1 y">2011-9-1 11:14 上传</p>
+
+</div>
+<div class="tip_horn"></div>
+</div>
+
+</ignore_js_op>
+
+<ignore_js_op>
+
+<img id="aimg_2647423" aid="2647423" src="static/image/common/none.gif" zoomfile="/data/attachment/forum/day_110901/1109011114a8b46839191f0299.jpg" file="/data/attachment/forum/day_110901/1109011114a8b46839191f0299.jpg" class="zoom" onclick="zoom(this, this.src, 0, 0, 0)" width="642" id="aimg_2647423" inpost="1" onmouseover="showMenu({'ctrlid':this.id,'pos':'12'})" />
+
+<div class="tip tip_4 aimg_tip" id="aimg_2647423_menu" style="position: absolute; display: none" disautofocus="true">
+<div class="xs0">
+<p><strong>QQ截图20110901111250.jpg</strong> <em class="xg1">(111.15 KB, 下载次数: 17)</em></p>
+<p>
+<a href="forum.php?mod=attachment&amp;aid=MjY0NzQyM3xjOTdkODQyZnwxNTE0MzU4MjkxfDczMzQ2OHw3ODQ1Mjg%3D&amp;nothumb=yes" target="_blank">下载附件</a>
+
+</p>
+
+<p class="xg1 y">2011-9-1 11:14 上传</p>
+
+</div>
+<div class="tip_horn"></div>
+</div>
+
+</ignore_js_op>
+<br />
+<hr class="l" /><font color="Red"><strong>install</strong></font> 安装 IPv6。<br />
+语法 install<br />
+<font color="Black"><div class="quote"><blockquote>此项没什么讲的，xp安装ipv6必须使用</blockquote></div></font><br />
+<hr class="l" /><strong><font color="Red">isatap</font></strong> 指定使用 netsh interface IPv6 isatap 的 isatap 环境。<br />
+语法 isatap<br />
+<i>注释</i><br />
+&#8226; IPv4 站点内的 IPv6 和 IPv4 节点间的通信将使用站点内自动隧道寻址协议 (ISATAP)。这在 Internet 草案“Intra-Site Automatic Tunnel Addressing Protocol (ISATAP)”(draft-ietf-ngtrans-isatap-00.txt) 中有描述。详细信息，请参阅在 IPv4 网络的不同子网节点之间的 IPv6 通讯。<br />
+<font color="Black"><div class="quote"><blockquote>此项是讲关于添加隧道问题 语法即 netsh interface ipv6 isatap</blockquote></div></font><br />
+<br />
+<hr class="l" /><strong><font color="Red">reset</font></strong> 重设 IPv6 配置状态。<br />
+语法 reset<br />
+<font color="Black"><div class="quote"><blockquote>此项是重置ipv6，</font><font color="Red"><font color="Black">提示</font></font><font color="Black">：只能是进行过高级修改才能重置，且要重启电脑生效</blockquote></div></font><br />
+<hr class="l" /><strong><font color="Red">set address</font></strong> 在指定的接口上修改 IPv6 地址。时间值可以表示为天 (d)、小时 (h)、分钟 (m) 及秒 (s)。例如，2d 表示两天。<br />
+语法<br />
+set address [[interface=]String] [address=]IPv6Address [[type=]{unicast | anycast}] [[validlifetime=]{Integer | infinite}] [[preferredlifetime=]{Integer | infinite}] [[store=]{active | persistent}]<br />
+参数 <br />
+[[ interface=]String] 指定接口名称或索引。<br />
+[ address=]IPv6Address 必需。指定要修改的 IPv6 地址。<br />
+[[ type=]{unicast | anycast}] 指定是将该地址标记为单播地址 (unicast) 还是任何播地址 (anycast)。默认选择为 unicast。<br />
+[[ validlifetime=]{Integer | infinite}] 指定地址有效的生存时间。默认值为 infinite。<br />
+[[ preferredlifetime=]{Integer | infinite}] 指定地址处于首选状态的生存时间。默认值为 infinite。<br />
+[[ store=]{active | persistent}] 指定更改是仅持续到下次启动为止 (active)，还是始终保持 (persistent)。默认选择为 persistent。<br />
+示例<br />
+本示例命令将名为“Private”的接口上的地址 FE80::2 设为任何播地址。<br />
+set address &quot;Private&quot; FE80::2 anycast<br />
+<font color="Black"><div class="quote"><blockquote>此项即为修改某个address，上面的看懂这步就很简单了</blockquote></div></font><br />
+<br />
+<hr class="l" /><font color="Red"><strong>set interface</strong></font> 修改接口配置参数。<br />
+语法<br />
+set interface [[interface=]String] [[forwarding=]{enabled | disabled}] [[advertise=]{enabled | disabled}] [[mtu=]Integer] [[siteid=]Integer] [[metric=]Integer] [[firewall=]{enabled | disabled}] [[siteprefixlength=]Integer] [[store=]{active | persistent}]<br />
+参数<br />
+[[ interface=]String] 指定接口名称或索引。<br />
+[[ forwarding=]{enabled | disabled}] 指定到达该接口的数据包是否可以转发到其他接口。默认选择为 disabled。<br />
+[[ advertise=]{enabled | disabled}] 指定是否在此接口上发送路由通告。默认选择为 disabled。<br />
+[[ mtu=]Integer] 指定此接口的 MTU。默认的 MTU 是该链接本来的 MTU。<br />
+[[ siteid=]Integer] 指定站点范围区域的标识符。<br />
+[[ metric=]Integer] 指定接口标记，该标记将添加到接口上的所有路由的路由指标中。<br />
+[[ firewall=]{enabled | disabled}] 指定是否在防火墙模式下工作。<br />
+[[ siteprefixlength=]Integer] 指定整个站点的全局前缀的默认长度。<br />
+[[ store=]{active | persistent}] 指定更改是仅持续到下次启动为止 (active)，还是始终保持 (persistent)。默认选择为 persistent。<br />
+示例<br />
+本示例命令将使用名称“Private”、站点 ID 2 以及标记 2 来设置接口。其他所有参数值都保留为默认值。<br />
+set interface &quot;Private&quot; siteid=2 metric=2<br />
+<font color="Black"><div class="quote"><blockquote>此项即为修改接口名称及接口号，private是原接口名称 siteid即为修改接口号ID，接口号为2</blockquote></div></font><br />
+<br />
+<hr class="l" /><font color="Red"><strong>set prefixpolicy</strong></font> 修改指定前缀的源和目标地址选择策略。<br />
+语法 set prefixpolicy [prefix=]IPv6Address/Integer [precedence=]Integer [label=]Integer [[store=]{active | persistent}]<br />
+参数<br />
+[ prefix=]IPv6Address/Integer 必需。指定要添加到策略表中的策略的前缀。Integer 指定前缀的长度。<br />
+[ precedence=]Integer 必需。指定用于对策略表中的目标地址进行排序的优先值。<br />
+[ label=]Integer 必需。指定允许要求一个特定的源地址前缀与目标地址前缀一起使用的策略的标签值。<br />
+[[ store=]{active | persistent}] 指定更改是仅持续到下次启动为止 (active)，还是始终保持 (persistent)。默认选择为 persistent。<br />
+示例<br />
+本示例命令使用优先值 3 和标签值 4 在策略表中为前缀 ::/96 设置策略。<br />
+set prefixpolicy ::/96 3 4<br />
+<font color="Black"><div class="quote"><blockquote>修改前缀限制条件，懂得添加前缀限制条件即会修改</blockquote></div></font><br />
+<br />
+<hr class="l" /><font color="Red"><strong>set route</strong></font> 修改路由参数。时间值可以表示为天 (d)、小时 (h)、分钟 (m) 及秒 (s)。例如，2d 表示两天。<br />
+语法<br />
+set route [prefix=]IPv6Address/Integer [[interface=]String] [[nexthop=]IPv6Address] [[siteprefixlength=]Integer] [[metric=]Integer] [publish=]{no | yes | immortal}] [[validlifetime=]{Integer | infinite}] [[preferredlifetime=]{Integer | infinite}] [[store=]{active | persistent}]<br />
+参数<br />
+[ prefix=]IPv6Address/Integer 必需。指定要修改的路由的前缀 (IPv6Address) 和前缀长度 (Integer)。<br />
+[[ interface=]String] 指定接口名称或索引。<br />
+[[ nexthop=]IPv6Address] 指定网关地址（如果前缀不在链路上）。<br />
+[[ siteprefixlength=]Integer] 指定整个站点的前缀长度（如果前缀不在链路上）。<br />
+[[ metric=]Integer] 指定路由指标。<br />
+[[ publish=]{no | yes | immortal}] 指定路由在“路由公布”中是公布 (yes)、无限生存期公布 (immortal) 还是不公布 (no)。默认选择为 no。<br />
+[[ validlifetime=]{Integer | infinite}] 指定路由有效的生存时间。默认值为 infinite。<br />
+[[ preferredlifetime=]{Integer | infinite}] 指定路由处于首选状态的生存时间。默认值为 infinite。<br />
+[[ store=]{active | persistent}] 指定更改是仅持续到下次启动为止 (active)，还是始终保持 (persistent)。默认选择为 persistent。<br />
+示例<br />
+本示例命令在名为“Internet”的接口上设置了一个路由。该路由的前缀是 3FFE::，长度为 16 位。nexthop= 参数定义的网关地址为 FE80::1。<br />
+set route 3FFE::/16 &quot;Internet&quot; FE80::1<br />
+<font color="Black"><div class="quote"><blockquote>修改route </blockquote></div></font><br />
+<br />
+<hr class="l" /><font color="Red"><strong>set state</strong></font> 启用或禁用 IPv4 兼容性。所有参数的默认值都是“禁用”。<br />
+语法<br />
+set state [[6over4=]{enabled | disabled | default}] [[v4compat=]{enabled | disabled | default}]<br />
+参数<br />
+[[6over4=]{enabled| disabled| default}]<br />
+指定是否创建 6over4 接口要禁用并删除 6over4 兼容接口，请指定 default。要禁用 6over4 兼容接口但不删除它们，请指定 disabled。<br />
+[[ v4compat=]{ enabled| disabled| default}]<br />
+指定是否创建 IPv4 兼容接口。要禁用并删除 IPv4 兼容接口，请指定 default。要禁用 IPv4 兼容接口但不删除它们，请指定 disabled。<br />
+示例<br />
+第一个示例命令将禁用 IPv4 兼容地址，并删除此前的任何现有接口。而第二个命令示例会启用 IPv4 兼容地址。<br />
+设置<br />
+<font color="Black"><div class="quote"><blockquote>设置各种协议的使用状况，比如关闭隧道等</blockquote></div></font><br />
+<br />
+<hr class="l" /><font color="Red"><strong>show address</strong></font> 显示所有 IPv6 地址或指定接口上的所有地址。<br />
+语法 show address [[interface=]String] [[level=]{normal | verbose}] [[store=]{active | persistent}]<br />
+参数<br />
+[[ interface=]String] 指定接口名称或索引。<br />
+[[ level=]{normal | verbose}] 指定每个接口显示一行信息 (normal) 还是同时显示其他信息 (verbose)。当未指定接口时，默认选择为 normal。当指定接口时，默认选择为 verbose。<br />
+[[ store=]{active | persistent}] 指定是显示活动 (active) 地址还是持久性 (persistent) 地址。默认选择为 active。<br />
+<font color="Black"><div class="quote"><blockquote>上面已多次使用</blockquote></div></font><br />
+<br />
+<hr class="l" /><font color="Red"><strong>show interface</strong></font> 显示有关所有接口或有关指定接口的信息。<br />
+语法 show interface [[interface=]String] [[level=]{normal | verbose}] [[store=]{active | persistent}]<br />
+参数<br />
+[[ interface=]String] 指定接口名称或索引。<br />
+[[ level=]{normal | verbose}] 指定每个接口显示一行信息 (normal) 还是同时显示其他信息 (verbose)。当未指定接口时，默认选择为 normal。当指定接口时，默认选择为 verbose。<br />
+[[ store=]{active | persistent}] 指定是显示活动 (active) 接口还是持久性 (persistent) 接口。默认选择为 active。<br />
+<font color="Black"><div class="quote"><blockquote>interface=int 即显示接口及其信息</blockquote></div></font><br />
+<br />
+<hr class="l" /><strong><font color="Red">show routes</font></strong> 显示路由表项。<br />
+语法 show routes [[level=]{normal | verbose}] [[store=]{active | persistent}]<br />
+参数<br />
+[[ level=]{normal | verbose}] 指定是仅显示正常路由 (normal) 还是用于环回的路由 (verbose)。默认选择为 normal。<br />
+[[ store=]{active | persistent}]&nbsp;&nbsp;指定是显示活动 (active) 路由还是持久性 (persistent) 路由。默认选择为 active。<br />
+<br />
+<hr class="l" /><font color="Red"><strong>show siteprefixes</strong></font> 显示站点前缀表。<br />
+语法 show siteprefixes<br />
+<font color="Black"><div class="quote"><blockquote>显示站点前缀信息</blockquote></div></font><br />
+<hr class="l" /><strong><font color="Red">uninstall</font></strong> 卸载 IPv6。<br />
+语法 uninstall<br />
+<font color="Black"><div class="quote"><blockquote>install的逆过程，即卸载v6协议</font>，<font color="Red">提示</font>：<font color="Black">需重启电脑</blockquote></div></font></td></tr></table>
+
+
+</div>
+<div id="comment_15987178" class="cm">
+</div>
+
+<div id="post_rate_div_15987178"></div>
+</div>
+</div>
+
+</td></tr>
+<tr><td class="plc plm">
+<div class="a_pb"><a href="1193867" target="_blank" ><font face="微软雅黑" color="indianred" size=2><b> =-=★六维空间常见问题解答（第三版）★=-= </b></font></a></div></td>
+</tr>
+<tr id="_postposition15987178"></tr>
+<tr>
+<td class="pls"></td>
+<td class="plc" style="overflow:visible;">
+<div class="po hin">
+<div class="pob cl">
+<em>
+</em>
+
+<p>
+<a href="javascript:;" id="mgc_post_15987178" onmouseover="showMenu(this.id)" class="showmenu">使用道具</a>
+<a href="javascript:;" onclick="showWindow('miscreport15987178', 'misc.php?mod=report&rtype=post&rid=15987178&tid=784528&fid=129', 'get', -1);return false;">举报</a>
+</p>
+
+<ul id="mgc_post_15987178_menu" class="p_pop mgcmn" style="display: none;">
+<li><a href="home.php?mod=magic&amp;mid=namepost&amp;idtype=pid&amp;id=15987178:784528" id="a_namepost_15987178" onclick="showWindow(this.id, this.href)"><img src="static/image/magic/namepost.small.gif" />显身卡</a><li>
+</ul>
+<script type="text/javascript" reload="1">checkmgcmn('post_15987178')</script>
+</div>
+</div>
+</td>
+</tr>
+<tr class="ad">
+<td class="pls">
+</td>
+<td class="plc">
+</td>
+</tr>
+</table>
+<script type="text/javascript" reload="1">
+aimgcount[15987178] = ['2647147','2647148','2647347','2647390','2647391','2647414','2647415','2647422','2647423'];
+attachimggroup(15987178);
+attachimgshow(15987178);
+var aimgfid = 0;
+</script>
+</div><div id="post_15988150" ><table id="pid15988150" class="plhin" summary="pid15988150" cellspacing="0" cellpadding="0">
+<tr>
+<td class="pls" rowspan="2">
+<div id="favatar15988150" class="pls favatar">
+ <div class="pi">
+<div class="authi"><a href="home.php?mod=space&amp;uid=134562" target="_blank" class="xw1" style="color: magenta">hj2514791</a>
+</div>
+</div>
+<div class="p_pop blk bui card_gender_1" id="userinfo15988150" style="display: none; margin-top: -11px;">
+<div class="m z">
+<div id="userinfo15988150_ma"></div>
+</div>
+<div class="i y">
+<div>
+<strong><a href="home.php?mod=space&amp;uid=134562" target="_blank" class="xi2" style="color: magenta">hj2514791</a></strong>
+<em>当前离线</em>
+</div><dl class="cl">
+<dt>UID</dt><dd><a href="?134562" target="_blank" class="xi2">134562</a></dd>
+<dt>积分</dt><dd><a href="home.php?mod=space&uid=134562&do=profile" target="_blank" class="xi2">1028009</a></dd>
+
+<dt>威望</dt><dd>4 </dd>
+<dt>浮云</dt><dd>150868 </dd>
+<dt>上传</dt><dd>11449864 MB</dd>
+<dt>下载</dt><dd>3625856 MB</dd>
+<dt>贡献</dt><dd>1416 </dd>
+<dt>功勋</dt><dd>0 点</dd>
+<dt>帖子</dt><dd><a href="home.php?mod=space&uid=134562&do=thread&type=reply&view=me&from=space" target="_blank" class="xi2">19336</a></dd>
+<dt>主题</dt><dd><a href="home.php?mod=space&uid=134562&do=thread&type=thread&view=me&from=space" target="_blank" class="xi2">990</a></dd>
+<dt>注册时间</dt><dd>2010-5-18</dd>
+<dt>最后登录</dt><dd>2016-8-28</dd>
+<dt></dt><dd></dd>
+<dt>QQ</dt><dd><a href="http://wpa.qq.com/msgrd?V=3&Uin=229425985&Site=六维空间 - 教育科研网分享测试平台&Menu=yes&from=discuz" target="_blank" title="发起QQ聊天"><img src="static//image/common/qq_big.gif" alt="QQ" style="margin:0px;"/></a></dd>
+<dt></dt><dd></dd>
+<dt>个人主页</dt><dd><a href="" target="_blank"></a></dd>
+
+
+</dl><div class="imicn">
+<a href="http://wpa.qq.com/msgrd?V=3&amp;Uin=229425985&amp;Site=六维空间 - 教育科研网分享测试平台&amp;Menu=yes&amp;from=discuz" target="_blank" title="QQ"><img src="static/image/common/qq.gif" alt="QQ" /></a><a href="home.php?mod=space&amp;uid=134562&amp;do=profile" target="_blank" title="查看详细资料"><img src="static/image/common/userinfo.gif" alt="查看详细资料" /></a>
+</div>
+<div id="avatarfeed"><span id="threadsortswait"></span></div>
+</div>
+</div>
+<div>
+<div class="avatar" onmouseover="showauthor(this, 'userinfo15988150')"><a href="home.php?mod=space&amp;uid=134562" class="avtm" target="_blank"><img src="http://bt.neu6.edu.cn/uc_server/data/avatar/000/13/45/62_avatar_middle.jpg" onerror="this.onerror=null;this.src='http://bt.neu6.edu.cn/uc_server/images/noavatar_middle.gif'" /></a></div>
+</div>
+<div class="tns xg2"><table cellspacing="0" cellpadding="0"><th><p><a href="home.php?mod=space&uid=134562&do=thread&type=thread&view=me&from=space" class="xi2">990</a></p>主题</th><th><p><a href="home.php?mod=space&uid=134562&do=thread&type=reply&view=me&from=space" class="xi2"><span title="19336">1万</span></a></p>帖子</th><td><p><a href="home.php?mod=space&uid=134562&do=profile" class="xi2"><span title="1028009">102万</span></a></p>积分</td></table></div>
+<p style="transform:translate(-8px)"><a href="home.php?mod=spacecp&amp;ac=usergroup&amp;gid=37" target="_blank"><img src="/data/attachment/common/a5/common_37_usergroup_icon.gif" alt="" class="vm" /></a></p>
+<p><em><a href="home.php?mod=spacecp&amp;ac=usergroup&amp;gid=37" target="_blank"><font color="magenta">★资深版主★</font></a></em></p>
+
+
+<p><span><img src="static/image/common/star_level2.gif" alt="Rank: 14" /><img src="static/image/common/star_level2.gif" alt="Rank: 14" /><img src="static/image/common/star_level2.gif" alt="Rank: 14" /><img src="static/image/common/star_level1.gif" alt="Rank: 14" /><img src="static/image/common/star_level1.gif" alt="Rank: 14" /></span></p>
+
+
+
+<dl class="pil cl">
+<dt>积分</dt><dd><a href="home.php?mod=space&uid=134562&do=profile" target="_blank" class="xi2">1028009</a></dd>
+<dt>威望</dt><dd>4 </dd>
+<dt>浮云</dt><dd>150868 </dd>
+<dt>上传</dt><dd id="upupup">11449864 MB</dd>
+<dt>贡献</dt><dd>1416 </dd>
+<dt>功勋</dt><dd>0 点</dd>
+<dt>最后登录</dt><dd>2016-8-28</dd>
+</dl>
+<p class="md_ctrl"><a href="home.php?mod=medal"><img id="md_15988150_93" src="static/image/common/medal3.gif" alt="江湖新秀荣誉勋章" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_93_menu', 'pos':'12!'})" /><img id="md_15988150_94" src="static/image/common/medal6.gif" alt="杰出贡献勋章" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_94_menu', 'pos':'12!'})" /><img id="md_15988150_42" src="static/image/common/medal22.gif" alt="超级幸运勋章" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_42_menu', 'pos':'12!'})" /><img id="md_15988150_49" src="static/image/common/medal37.gif" alt="互助先锋" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_49_menu', 'pos':'12!'})" /><img id="md_15988150_40" src="static/image/common/medal20.gif" alt="贴图大师" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_40_menu', 'pos':'12!'})" /><img id="md_15988150_39" src="static/image/common/medal14.gif" alt="六维优秀会员" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_39_menu', 'pos':'12!'})" /><img id="md_15988150_9" src="static/image/common/medal9.gif" alt="论坛财主勋章" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_9_menu', 'pos':'12!'})" /><img id="md_15988150_72" src="static/image/common/medal19.gif" alt="爆楼队队员" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_72_menu', 'pos':'12!'})" /></a></p>
+<dl class="pil cl"><a href="http://wpa.qq.com/msgrd?V=3&Uin=229425985&Site=六维空间 - 教育科研网分享测试平台&Menu=yes&from=discuz" target="_blank" title="发起QQ聊天"><img src="static//image/common/qq_big.gif" alt="QQ" style="margin:0px;"/></a></dl>
+<ul class="xl xl2 o cl">
+<li class="addflw">
+<a href="home.php?mod=spacecp&amp;ac=follow&amp;op=add&amp;hash=7a6d56f3&amp;fuid=134562" id="followmod_134562" title="收听TA" class="xi2" onclick="showWindow('followmod', this.href, 'get', 0);">收听TA</a>
+</li>
+<li class="pm2"><a href="home.php?mod=spacecp&amp;ac=pm&amp;op=showmsg&amp;handlekey=showmsg_134562&amp;touid=134562&amp;pmid=0&amp;daterange=2&amp;pid=15988150&amp;tid=784528" onclick="showWindow('sendpm', this.href);" title="发消息" class="xi2">发消息</a></li>
+</ul>
+</div>
+</td>
+<td class="plc">
+<div class="pi">
+<strong>
+<a href="forum.php?mod=redirect&goto=findpost&ptid=784528&pid=15988150"   id="postnum15988150" onclick="setCopy(this.href, '帖子地址复制成功');return false;">
+<em>5</em>楼</a>
+</strong>
+<div class="pti">
+<div class="pdbt">
+</div>
+<div class="authi">
+<img class="authicn vm" id="authicon15988150" src="static/image/common/ico_lz.png" />
+&nbsp;楼主<span class="pipe">|</span>
+<em id="authorposton15988150">发表于 2011-9-1 11:31</em>
+<span class="pipe">|</span>
+<a href="forum.php?mod=viewthread&amp;tid=784528&amp;page=1&amp;authorid=134562" rel="nofollow">只看该作者</a>
+</div>
+</div>
+</div><div class="pct"><div class="pcb">
+<div class="t_fsz">
+<table cellspacing="0" cellpadding="0"><tr><td class="t_f" id="postmessage_15988150">
+<i class="pstatus"> 本帖最后由 hj2514791 于 2011-9-12 01:21 编辑 </i><br />
+<br />
+<font size="4"><strong><font color="Purple">⑤</font> IPv4网络下接入IPv6网络的方法（隧道与第三方软件） </strong></font><br /><div class="quote"><blockquote><font size="3"><strong>目前基本上在校的均为教育网下的双栈协议，既支持IPv4网络也支持IPv6网络，速度快且稳定，通常很少用隧道<br />
+一般隧道均为仅有ipv4通畅情况下使用</strong></font></blockquote></div><br />
+<font size="4"><strong>1、ISATAP隧道</strong></font><br />
+<table cellspacing="0" class="t_table" style="width:98%" bgcolor="DarkOrange"><tr><td><font size="3">注意：所在网络具有公网IPv4地址，不支持NAT后的主机访问<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;一般直接通过PPPoE拨号的宽带用户均会自动分配到公网IPv4地址。<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;而通过路由器上网的则一般不具有公网IPv4地址，也无法通过ISATAP隧道接入IPv6网络。<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;不具备公网IPv4地址的用户可通过Teredo隧道接入IPv6</font></td></tr></table><font size="3"><u><font color="Red"><strong><br />
+PS：即通过路由的获取的地址是192.168类的无法使用isatap及6to4隧道，只能通过teredo隧道&nbsp; &nbsp; </strong></font></u></font><br />
+<br />
+目前教育网上大部分高校均提供ISATAP隧道<br />
+&nbsp; &nbsp; 上海交通大学isatap.sjtu.edu.cn<br />
+&nbsp; &nbsp; 北京邮电大学isatap.bupt.edu.cn<br />
+&nbsp; &nbsp; 清华大学isatap.tsinghua.edu.cn和59.66.4.50<br />
+&nbsp; &nbsp; 华中科技大学isatap.hust.edu.cn<br />
+&nbsp; &nbsp; 台湾：tb.ipv6.apol.com.tw<br />
+&nbsp; &nbsp; 台湾 isatap.ipv6.chttl.com.tw(202.39.142.146)<br />
+&nbsp; &nbsp; 韩国 isatap.ngix.ne.kr(203.254.38.129)<br />
+&nbsp; &nbsp; 波兰 isatap.icpnet.pl(62.21.98.6) <br /><div class="quote"><blockquote>看懂了上面隧道安装就很简单了</blockquote></div><br />
+<br />
+<table cellspacing="0" class="t_table" style="width:98%" bgcolor="Cyan"><tr><td> <font size="3"><strong>xp/2003系统:&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</strong>必须要先安装ipv6协议栈<br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;打开cmd.exe，输入ipv6 install <br />
+&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;ipv6就安装成功了</font><br />
+<br />
+<font size="3"><strong>Vista/Win7系统：</strong>&nbsp; &nbsp;自带ipv6，不需要安装</font></td></tr><tr><td><font size="3"> 安装好ipv6后，重启电脑</font></td></tr><tr><td> <font size="3">在cmd中输入：<div class="blockcode"><div id="code_j0H"><ol><li>netsh interface ipv6 isatap set router isatap.sjtu.edu.cn</ol></div><em onclick="copycode($('code_j0H'));">复制代码</em></div></font><br />
+<br />
+</td></tr><tr><td><font size="3"> cmd中输入：ipconfig /all查看是否获得2001开头ipv6地址</font><br />
+<br />
+</td></tr></table><br />
+<font size="4"><strong>2.6to4隧道</strong></font><br /><div class="quote"><blockquote><font size="3">同isatap需要时公网，6to4存在易获取2002开头地址，通常很少使用</font></blockquote></div><br />
+&nbsp; &nbsp;上海交大 202.112.26.246 <br />
+&nbsp; &nbsp; 北京大学 222.29.159.10 <br />
+&nbsp; &nbsp; 6to4.ipv6.chttl.com.tw(202.39.142.146) <br />
+&nbsp; &nbsp; infonet.ipv6.ustc.edu.cn(202.38.75.75) <br />
+&nbsp; &nbsp; kddilab.6to4.jp(202.255.45.5) <br />
+&nbsp; &nbsp; 6to4.ngix.ne.kr(203.254.38.130) <br />
+&nbsp; &nbsp; 6to4.ipv6.microsoft.com(131.107.33.60,192.88.99.1) <br />
+<br />
+<br />
+<font size="5">3.teredo隧道</font><br />
+&nbsp; &nbsp;<table cellspacing="0" class="t_table" style="width:98%" bgcolor="DarkOrange"><tr><td>&nbsp;&nbsp;<font size="3">注意：Teredo隧道不需要PC机具有公网IPv4地址，可以穿越NAT通过将IPv6数据包封装在UDP中访问IPv6网络</font></td></tr></table><br />
+&nbsp;&nbsp;公共Teredo服务器地址列表<br />
+ teredo.remlab.net / teredo-debian.remlab.net (法国) (Miredo 默认设置)<br />
+ teredo.autotrans.consulintel.com (西班牙)<br />
+ teredo.ipv6.microsoft.com (美国 雷蒙德) (Windows XP/2003/Vista/7/2008 系统默认设置)<br />
+ teredo.ngix.ne.kr (韩国)<br />
+ teredo.managemydedi.com (美国 芝加哥)<br />
+<br />
+&nbsp; &nbsp;<font size="3"><font color="Red"><strong>关于如何配置Teredo隧道接入IPv6</strong></font></font><br />
+&nbsp; &nbsp;<table cellspacing="0" class="t_table" style="width:50%" bgcolor="Cyan"><tr><td> cmd中输入<div class="blockcode"><div id="code_T1P"><ol><li>netsh interface ipv6 set teredo client tereno.renlab.net</ol></div><em onclick="copycode($('code_T1P'));">复制代码</em></div></td></tr><tr><td> 查看tereno state&nbsp;&nbsp;cmd输入<div class="blockcode"><div id="code_yt6"><ol><li>netsh interface ipv6 show tereno state </ol></div><em onclick="copycode($('code_yt6'));">复制代码</em></div>查看状态是否是 restricted<br />
+</td></tr></table><br />
+<font size="4"><strong>5.第三方软件支持</strong></font><br />
+&nbsp; &nbsp; 六飞、Veno、gogoCLIENT等，不需要具有IPv4公网地址，可以穿越NAT，可直接使用，无需进行复杂的设置，安装注册后即可使用。<br />
+<br />
+<br />
+<hr class="l" /><br />
+<font size="4"><strong>teredo的补充（可能之前说的不清楚，再次补充）</strong></font><br />
+Win XP：<div class="blockcode"><div id="code_Azz"><ol><li>netsh interface ipv6 install</ol></div><em onclick="copycode($('code_Azz'));">复制代码</em></div><div class="blockcode"><div id="code_ySy"><ol><li>netsh interface ipv6 set teredo client</ol></div><em onclick="copycode($('code_ySy'));">复制代码</em></div>Win Vista/7:<div class="blockcode"><div id="code_pTs"><ol><li>netsh interface ipv6 set state client</ol></div><em onclick="copycode($('code_pTs'));">复制代码</em></div><div class="quote"><blockquote>Debian/Ubuntu Linux：<br />
+sudo apt-get install miredo<br />
+<br />
+Redhat/Fedora Linux:<br />
+su -c 'yum install miredo'<br />
+su -c 'service miredo-client start'</blockquote></div>这个不确定 <br />
+<br />
+<font size="3"><strong>经过上面的设置还无法连接，那就接着输入：</strong></font><br />
+Win XP:<div class="blockcode"><div id="code_M2b"><ol><li>netsh interface ipv6 set teredo enterpriseclient</ol></div><em onclick="copycode($('code_M2b'));">复制代码</em></div>Win Vista/7:<div class="blockcode"><div id="code_ZhJ"><ol><li>netsh interface ipv6 set state enterpriseclient</ol></div><em onclick="copycode($('code_ZhJ'));">复制代码</em></div>然后通过<div class="blockcode"><div id="code_wiY"><ol><li>netsh interface ipv6 show teredo</ol></div><em onclick="copycode($('code_wiY'));">复制代码</em></div>查看当前teredo状态<br />
+如果teredo状态显示应该是qualified（端口有数字或者unspcified都无所谓）那么CMD下输入ipconfig /all应该可以看到一个2001开头的IP地址,那么teredo设置成功。<br />
+如果teredo状态为dormant的话，你可以尝试关闭或打开系统防火墙试试，dormant和防火墙有关<br />
+<br />
+浏览器里面输入ipv6.google.com，如果正常打开了，则teredo穿路由器成功<br />
+<br />
+<font color="DarkOrchid"><strong>如果感觉设置后太乱可以输入以下重置</strong></font><br /><div class="blockcode"><div id="code_o5h"><ol><li>netsh interface teredo set state default server=default</ol></div><em onclick="copycode($('code_o5h'));">复制代码</em></div><br />
+<br />
+经过以上如还不行可尝试下以下：<br />
+1.首先转换你的内网ipv4的地址为ipv6，并在ipv6中进行设置，不熟悉ipv4到ipv6转换的朋友可以使用<a href="http://ip-lookup.net/conversion.php" target="_blank">http://ip-lookup.net/conversion.php</a>进行转换，并将转换好的ipv6地址，设置网卡ipv6中，subnet默认一般为64，请改为48，网关什么都不添。<br />
+<br />
+2.关键的一步，进入netsh interface ipv6中，show route查看，此时应该没有::/0的路由，需要自己添加。假如Teredo Tunneling Pseudo-Interface ID接口号为27，所以可添加如下：<div class="blockcode"><div id="code_TSP"><ol><li>set route ::/0 interface=31 </ol></div><em onclick="copycode($('code_TSP'));">复制代码</em></div>通过以上两步的补充设置，就可以实现teredo的正常访问</td></tr></table>
+
+
+</div>
+<div id="comment_15988150" class="cm">
+</div>
+
+<h3 class="psth xs1"><span class="icon_ring vm"></span>评分</h3>
+<dl id="ratelog_15988150" class="rate">
+<dd style="margin:0">
+<div id="post_rate_15988150"></div>
+<table class="ratl">
+<tr>
+<th class="xw1" width="120"><a href="forum.php?mod=misc&amp;action=viewratings&amp;tid=784528&amp;pid=15988150" onclick="showWindow('viewratings', this.href)" title="查看全部评分"> 参与人数 <span class="xi1">2</span></a></th><th class="xw1" width="80">浮云 <i><span class="xi1">+15</span></i></th>
+<th class="xw1" width="80"> <i><span class="xi1">+150</span></i></th>
+<th>
+<a href="javascript:;" onclick="toggleRatelogCollapse('ratelog_15988150', this);" class="y xi2 op">收起</a>
+<i class="txt_h">理由</i>
+</th>
+</tr>
+<tbody class="ratl_l"><tr id="rate_15988150_93256">
+<td>
+<a href="home.php?mod=space&amp;uid=93256" target="_blank"><img src="http://bt.neu6.edu.cn/uc_server/data/avatar/000/09/32/56_avatar_small.jpg" onerror="this.onerror=null;this.src='http://bt.neu6.edu.cn/uc_server/images/noavatar_small.gif'" /></a> <a href="home.php?mod=space&amp;uid=93256" target="_blank">鲜松苗</a>
+</td><td class="xi1"> + 5</td>
+<td class="xg1"></td>
+<td class="xg1">有个叫六年级的软件，很好用。</td>
+</tr>
+<tr id="rate_15988150_212281">
+<td>
+<a href="home.php?mod=space&amp;uid=212281" target="_blank"><img src="http://bt.neu6.edu.cn/uc_server/data/avatar/000/21/22/81_avatar_small.jpg" onerror="this.onerror=null;this.src='http://bt.neu6.edu.cn/uc_server/images/noavatar_small.gif'" /></a> <a href="home.php?mod=space&amp;uid=212281" target="_blank">ldyli</a>
+</td><td class="xi1"> + 10</td>
+<td class="xi1"> + 150</td>
+<td class="xg1">看到了总结贴子的~~整理辛苦</td>
+</tr>
+</tbody>
+</table>
+<p class="ratc">
+<a href="forum.php?mod=misc&amp;action=viewratings&amp;tid=784528&amp;pid=15988150" onclick="showWindow('viewratings', this.href)" title="查看全部评分" class="xi2">查看全部评分</a>
+</p>
+</dd>
+</dl>
+</div>
+</div>
+
+</td></tr>
+<tr><td class="plc plm">
+<div class="a_pb"><a href="1193867" target="_blank" ><font face="微软雅黑" color="indianred" size=2><b> =-=★六维空间常见问题解答（第三版）★=-= </b></font></a></div></td>
+</tr>
+<tr id="_postposition15988150"></tr>
+<tr>
+<td class="pls"></td>
+<td class="plc" style="overflow:visible;">
+<div class="po hin">
+<div class="pob cl">
+<em>
+</em>
+
+<p>
+<a href="javascript:;" id="mgc_post_15988150" onmouseover="showMenu(this.id)" class="showmenu">使用道具</a>
+<a href="javascript:;" onclick="showWindow('miscreport15988150', 'misc.php?mod=report&rtype=post&rid=15988150&tid=784528&fid=129', 'get', -1);return false;">举报</a>
+</p>
+
+<ul id="mgc_post_15988150_menu" class="p_pop mgcmn" style="display: none;">
+<li><a href="home.php?mod=magic&amp;mid=namepost&amp;idtype=pid&amp;id=15988150:784528" id="a_namepost_15988150" onclick="showWindow(this.id, this.href)"><img src="static/image/magic/namepost.small.gif" />显身卡</a><li>
+</ul>
+<script type="text/javascript" reload="1">checkmgcmn('post_15988150')</script>
+</div>
+</div>
+</td>
+</tr>
+<tr class="ad">
+<td class="pls">
+</td>
+<td class="plc">
+</td>
+</tr>
+</table>
+</div><div id="post_16038227" ><table id="pid16038227" class="plhin" summary="pid16038227" cellspacing="0" cellpadding="0">
+<tr>
+<td class="pls" rowspan="2">
+<div id="favatar16038227" class="pls favatar">
+ <a name="lastpost"></a><div class="pi">
+<div class="authi"><a href="home.php?mod=space&amp;uid=134562" target="_blank" class="xw1" style="color: magenta">hj2514791</a>
+</div>
+</div>
+<div class="p_pop blk bui card_gender_1" id="userinfo16038227" style="display: none; margin-top: -11px;">
+<div class="m z">
+<div id="userinfo16038227_ma"></div>
+</div>
+<div class="i y">
+<div>
+<strong><a href="home.php?mod=space&amp;uid=134562" target="_blank" class="xi2" style="color: magenta">hj2514791</a></strong>
+<em>当前离线</em>
+</div><dl class="cl">
+<dt>UID</dt><dd><a href="?134562" target="_blank" class="xi2">134562</a></dd>
+<dt>积分</dt><dd><a href="home.php?mod=space&uid=134562&do=profile" target="_blank" class="xi2">1028009</a></dd>
+
+<dt>威望</dt><dd>4 </dd>
+<dt>浮云</dt><dd>150868 </dd>
+<dt>上传</dt><dd>11449864 MB</dd>
+<dt>下载</dt><dd>3625856 MB</dd>
+<dt>贡献</dt><dd>1416 </dd>
+<dt>功勋</dt><dd>0 点</dd>
+<dt>帖子</dt><dd><a href="home.php?mod=space&uid=134562&do=thread&type=reply&view=me&from=space" target="_blank" class="xi2">19336</a></dd>
+<dt>主题</dt><dd><a href="home.php?mod=space&uid=134562&do=thread&type=thread&view=me&from=space" target="_blank" class="xi2">990</a></dd>
+<dt>注册时间</dt><dd>2010-5-18</dd>
+<dt>最后登录</dt><dd>2016-8-28</dd>
+<dt></dt><dd></dd>
+<dt>QQ</dt><dd><a href="http://wpa.qq.com/msgrd?V=3&Uin=229425985&Site=六维空间 - 教育科研网分享测试平台&Menu=yes&from=discuz" target="_blank" title="发起QQ聊天"><img src="static//image/common/qq_big.gif" alt="QQ" style="margin:0px;"/></a></dd>
+<dt></dt><dd></dd>
+<dt>个人主页</dt><dd><a href="" target="_blank"></a></dd>
+
+
+</dl><div class="imicn">
+<a href="http://wpa.qq.com/msgrd?V=3&amp;Uin=229425985&amp;Site=六维空间 - 教育科研网分享测试平台&amp;Menu=yes&amp;from=discuz" target="_blank" title="QQ"><img src="static/image/common/qq.gif" alt="QQ" /></a><a href="home.php?mod=space&amp;uid=134562&amp;do=profile" target="_blank" title="查看详细资料"><img src="static/image/common/userinfo.gif" alt="查看详细资料" /></a>
+</div>
+<div id="avatarfeed"><span id="threadsortswait"></span></div>
+</div>
+</div>
+<div>
+<div class="avatar" onmouseover="showauthor(this, 'userinfo16038227')"><a href="home.php?mod=space&amp;uid=134562" class="avtm" target="_blank"><img src="http://bt.neu6.edu.cn/uc_server/data/avatar/000/13/45/62_avatar_middle.jpg" onerror="this.onerror=null;this.src='http://bt.neu6.edu.cn/uc_server/images/noavatar_middle.gif'" /></a></div>
+</div>
+<div class="tns xg2"><table cellspacing="0" cellpadding="0"><th><p><a href="home.php?mod=space&uid=134562&do=thread&type=thread&view=me&from=space" class="xi2">990</a></p>主题</th><th><p><a href="home.php?mod=space&uid=134562&do=thread&type=reply&view=me&from=space" class="xi2"><span title="19336">1万</span></a></p>帖子</th><td><p><a href="home.php?mod=space&uid=134562&do=profile" class="xi2"><span title="1028009">102万</span></a></p>积分</td></table></div>
+<p style="transform:translate(-8px)"><a href="home.php?mod=spacecp&amp;ac=usergroup&amp;gid=37" target="_blank"><img src="/data/attachment/common/a5/common_37_usergroup_icon.gif" alt="" class="vm" /></a></p>
+<p><em><a href="home.php?mod=spacecp&amp;ac=usergroup&amp;gid=37" target="_blank"><font color="magenta">★资深版主★</font></a></em></p>
+
+
+<p><span><img src="static/image/common/star_level2.gif" alt="Rank: 14" /><img src="static/image/common/star_level2.gif" alt="Rank: 14" /><img src="static/image/common/star_level2.gif" alt="Rank: 14" /><img src="static/image/common/star_level1.gif" alt="Rank: 14" /><img src="static/image/common/star_level1.gif" alt="Rank: 14" /></span></p>
+
+
+
+<dl class="pil cl">
+<dt>积分</dt><dd><a href="home.php?mod=space&uid=134562&do=profile" target="_blank" class="xi2">1028009</a></dd>
+<dt>威望</dt><dd>4 </dd>
+<dt>浮云</dt><dd>150868 </dd>
+<dt>上传</dt><dd id="upupup">11449864 MB</dd>
+<dt>贡献</dt><dd>1416 </dd>
+<dt>功勋</dt><dd>0 点</dd>
+<dt>最后登录</dt><dd>2016-8-28</dd>
+</dl>
+<p class="md_ctrl"><a href="home.php?mod=medal"><img id="md_16038227_93" src="static/image/common/medal3.gif" alt="江湖新秀荣誉勋章" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_93_menu', 'pos':'12!'})" /><img id="md_16038227_94" src="static/image/common/medal6.gif" alt="杰出贡献勋章" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_94_menu', 'pos':'12!'})" /><img id="md_16038227_42" src="static/image/common/medal22.gif" alt="超级幸运勋章" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_42_menu', 'pos':'12!'})" /><img id="md_16038227_49" src="static/image/common/medal37.gif" alt="互助先锋" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_49_menu', 'pos':'12!'})" /><img id="md_16038227_40" src="static/image/common/medal20.gif" alt="贴图大师" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_40_menu', 'pos':'12!'})" /><img id="md_16038227_39" src="static/image/common/medal14.gif" alt="六维优秀会员" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_39_menu', 'pos':'12!'})" /><img id="md_16038227_9" src="static/image/common/medal9.gif" alt="论坛财主勋章" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_9_menu', 'pos':'12!'})" /><img id="md_16038227_72" src="static/image/common/medal19.gif" alt="爆楼队队员" title="" onmouseover="showMenu({'ctrlid':this.id, 'menuid':'md_72_menu', 'pos':'12!'})" /></a></p>
+<dl class="pil cl"><a href="http://wpa.qq.com/msgrd?V=3&Uin=229425985&Site=六维空间 - 教育科研网分享测试平台&Menu=yes&from=discuz" target="_blank" title="发起QQ聊天"><img src="static//image/common/qq_big.gif" alt="QQ" style="margin:0px;"/></a></dl>
+<ul class="xl xl2 o cl">
+<li class="addflw">
+<a href="home.php?mod=spacecp&amp;ac=follow&amp;op=add&amp;hash=7a6d56f3&amp;fuid=134562" id="followmod_134562" title="收听TA" class="xi2" onclick="showWindow('followmod', this.href, 'get', 0);">收听TA</a>
+</li>
+<li class="pm2"><a href="home.php?mod=spacecp&amp;ac=pm&amp;op=showmsg&amp;handlekey=showmsg_134562&amp;touid=134562&amp;pmid=0&amp;daterange=2&amp;pid=16038227&amp;tid=784528" onclick="showWindow('sendpm', this.href);" title="发消息" class="xi2">发消息</a></li>
+</ul>
+</div>
+</td>
+<td class="plc">
+<div class="pi">
+<strong>
+<a href="forum.php?mod=redirect&goto=findpost&ptid=784528&pid=16038227"   id="postnum16038227" onclick="setCopy(this.href, '帖子地址复制成功');return false;">
+<em>6</em>楼</a>
+</strong>
+<div class="pti">
+<div class="pdbt">
+</div>
+<div class="authi">
+<img class="authicn vm" id="authicon16038227" src="static/image/common/ico_lz.png" />
+&nbsp;楼主<span class="pipe">|</span>
+<em id="authorposton16038227">发表于 2011-9-5 00:06</em>
+<span class="pipe">|</span>
+<a href="forum.php?mod=viewthread&amp;tid=784528&amp;page=1&amp;authorid=134562" rel="nofollow">只看该作者</a>
+</div>
+</div>
+</div><div class="pct"><div class="pcb">
+<div class="t_fsz">
+<table cellspacing="0" cellpadding="0"><tr><td class="t_f" id="postmessage_16038227">
+<font size="5">转自hdchina</font><br /><div class="quote"><blockquote>关于获取2002开头的ipv6地址造成ipv6时断时续问题解决方法（个人原创）</blockquote></div><br />
+<div class="quote"><blockquote>校园网内精心配置的路由器,交换机会发布正确的IPv6路由前缀通告,CERNET2内一般都是2001:da8 开头。但是某些用户的电脑也可能会产生一些异常路由广播,使得附近其他用户拿到错误的无法路由出去的IPv6地址.给校园网用户正常使用IPv6带来很多困扰.（以上摘自kaida老师的blog）<br />
+<br />
+我们可以运用netsh提高 2001:开头地址的优先级,避免先通过其他渠道获取不正确的地址.如果有因获取2002开头的v6地址（具体表现为上ipv6站点时网络时断时续），可以在排除病毒干扰的原因后参考以下方法设置。<br />
+<font size="4"><font color="Red"><strong>具体方法如下：</strong></font></font><br />
+首先以管理员身份登录windows(xp或vista),之后开始-运行-cmd（vista用户可以所有程序-附件-命令提示符右键以管理员身份运行），出现命令提示符后按如下输入（注意，xp跟vista命令不同，请不要输错）<br />
+C:\&gt;netsh<br />
+netsh&gt;interface ipv6<br />
+对于xp用户<br />
+netsh interface ipv6&gt;set prefixpolicy ::1/128 50 0<br />
+Ok.<br />
+netsh interface ipv6&gt;set prefixpolicy ::/0 40 1<br />
+Ok.<br />
+netsh interface ipv6&gt;set prefixpolicy 2001::/16 30 1<br />
+Ok.<br />
+netsh interface ipv6&gt;set prefixpolicy ::/96 20 3<br />
+Ok.<br />
+netsh interface ipv6&gt;set prefixpolicy ::ffff:0:0/96 10 4<br />
+Ok.<br />
+netsh interface ipv6&gt;set prefixpolicy 3ffe:831f::/32 5 5<br />
+Ok.<br />
+对于vista用户<br />
+netsh interface ipv6&gt;set prefixpolicy ::1/128 50 0<br />
+Ok.<br />
+netsh interface ipv6&gt;add prefixpolicy ::/0 40 1<br />
+Ok.<br />
+netsh interface ipv6&gt;add prefixpolicy 2001::/16 30 1<br />
+Ok.<br />
+netsh interface ipv6&gt;add prefixpolicy ::/96 20 3<br />
+Ok.<br />
+netsh interface ipv6&gt;add prefixpolicy ::ffff:0:0/96 10 4<br />
+Ok.<br />
+netsh interface ipv6&gt;add prefixpolicy 3ffe:831f::/32 5 5<br />
+Ok.<br />
+之后重启机器，大功告成。如果用ipconfig查看，可以发现已经不会连接到2002开头的v6地址上了。<br />
+如有不懂，请指出哪里不懂，我可以添加相关解释，有反馈意见，也可以告诉我。netsh实际上是一个很好用的命令，如有兴趣，可查看相关资料。<br />
+这样设置完后，windows将2001开头地址作为优选ipv6地址，且可以使windows在ipv4与v6同时可以走通时优先选择v6地址。<br />
+如有兴趣，参考文章<a href="http://wiki.openwrt.org/IPv6_howto" target="_blank">http://wiki.openwrt.org/IPv6_howto</a></blockquote></div><br />
+<br />
+个人意见 对于vista用户的可用于win7 此外关于最后一个 add prefixpolicy 3ffe:831f::/32 5 5 我个人不是很明白为何是这个前缀</td></tr></table>
+
+
+</div>
+<div id="comment_16038227" class="cm">
+</div>
+
+<div id="post_rate_div_16038227"></div>
+</div>
+</div>
+
+</td></tr>
+<tr><td class="plc plm">
+<div class="sign" style="max-height:200px;maxHeightIE:200px;"><img src="http://asset.neubt.com/attachments/day_120619/12061921494c23f415c443f284.jpg" onload="thumbImg(this)" alt="" /><img width="500" height="300" src="http://asset.neubt.com/attachments/day_120619/1206192153863e0035c574651d.png" border="0" alt="" /></div>
+<div class="a_pb"><a href="1193867" target="_blank" ><font face="微软雅黑" color="indianred" size=2><b> =-=★六维空间常见问题解答（第三版）★=-= </b></font></a></div></td>
+</tr>
+<tr id="_postposition16038227"></tr>
+<tr>
+<td class="pls"></td>
+<td class="plc" style="overflow:visible;">
+<div class="po hin">
+<div class="pob cl">
+<em>
+</em>
+
+<p>
+<a href="javascript:;" id="mgc_post_16038227" onmouseover="showMenu(this.id)" class="showmenu">使用道具</a>
+<a href="javascript:;" onclick="showWindow('miscreport16038227', 'misc.php?mod=report&rtype=post&rid=16038227&tid=784528&fid=129', 'get', -1);return false;">举报</a>
+</p>
+
+<ul id="mgc_post_16038227_menu" class="p_pop mgcmn" style="display: none;">
+<li><a href="home.php?mod=magic&amp;mid=namepost&amp;idtype=pid&amp;id=16038227:784528" id="a_namepost_16038227" onclick="showWindow(this.id, this.href)"><img src="static/image/magic/namepost.small.gif" />显身卡</a><li>
+</ul>
+<script type="text/javascript" reload="1">checkmgcmn('post_16038227')</script>
+</div>
+</div>
+</td>
+</tr>
+<tr class="ad">
+<td class="pls">
+</td>
+<td class="plc">
+</td>
+</tr>
+</table>
+</div><div id="postlistreply" class="pl"><div id="post_new" class="viewthread_table" style="display: none"></div></div>
+</div>
+
+
+<form method="post" autocomplete="off" name="modactions" id="modactions">
+<input type="hidden" name="formhash" value="7a6d56f3" />
+<input type="hidden" name="optgroup" />
+<input type="hidden" name="operation" />
+<input type="hidden" name="listextra" value="page%3D1" />
+<input type="hidden" name="page" value="1" />
+</form>
+
+
+
+<div class="pgs mtm mbm cl">
+<span class="pgb y" id="visitedforumstmp" onmouseover="$('visitedforums').id = 'visitedforumstmp';this.id = 'visitedforums';showMenu({'ctrlid':this.id,'pos':'21'})"><a href="forum-129-1.html">返回列表</a></span>
+<a id="newspecialtmp" onmouseover="$('newspecial').id = 'newspecialtmp';this.id = 'newspecial';showMenu({'ctrlid':this.id})" onclick="showWindow('newthread', 'forum.php?mod=post&action=newthread&fid=129')" href="javascript:;" title="发新帖"><img src="static/image/common/pn_post.png" alt="发新帖" /></a>
+</div>
+
+<!--[diy=diyfastposttop]--><div id="diyfastposttop" class="area"></div><!--[/diy]-->
+<script type="text/javascript">
+var postminchars = parseInt('10');
+var postmaxchars = parseInt('1000000');
+var disablepostctrl = parseInt('0');
+</script>
+
+<div id="f_pst" class="pl bm bmw">
+<form method="post" autocomplete="off" id="fastpostform" action="forum.php?mod=post&amp;action=reply&amp;fid=129&amp;tid=784528&amp;extra=page%3D1&amp;replysubmit=yes&amp;infloat=yes&amp;handlekey=fastpost" onSubmit="return fastpostvalidate(this)">
+<table cellspacing="0" cellpadding="0">
+<tr>
+<td class="pls">
+<div class="avatar avtm"><img src="http://bt.neu6.edu.cn/uc_server/data/avatar/000/73/34/68_avatar_middle.jpg" onerror="this.onerror=null;this.src='http://bt.neu6.edu.cn/uc_server/images/noavatar_middle.gif'" /></div></td>
+<td class="plc">
+
+<span id="fastpostreturn"></span>
+
+
+<div class="cl">
+<div id="fastsmiliesdiv" class="y"><div id="fastsmiliesdiv_data"><div id="fastsmilies"></div></div></div><div class="hasfsl" id="fastposteditor">
+<div class="tedt mtn">
+<div class="bar">
+<span class="y">
+<a href="forum.php?mod=post&amp;action=reply&amp;fid=129&amp;tid=784528" onclick="return switchAdvanceMode(this.href)">高级模式</a>
+</span><script src="static/js/seditor.js?eXM" type="text/javascript"></script>
+<div class="fpd">
+<a href="javascript:;" title="文字加粗" class="fbld">B</a>
+<a href="javascript:;" title="设置文字颜色" class="fclr" id="fastpostforecolor">Color</a>
+<a id="fastpostimg" href="javascript:;" title="图片" class="fmg">Image</a>
+<a id="fastposturl" href="javascript:;" title="添加链接" class="flnk">Link</a>
+<a id="fastpostquote" href="javascript:;" title="引用" class="fqt">Quote</a>
+<a id="fastpostcode" href="javascript:;" title="代码" class="fcd">Code</a>
+<a href="javascript:;" class="fsml" id="fastpostsml">Smilies</a>
+</div></div>
+<div class="area">
+<div class="pt hm">
+您现在无权发帖。<a href="javascript:;" onclick="$('fastpostform').submit()" class="xi2">点击查看原因</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="seccheck_fastpost">
+</div>
+
+
+<input type="hidden" name="formhash" value="7a6d56f3" />
+<input type="hidden" name="usesig" value="1" />
+<input type="hidden" name="subject" value="  " />
+<p class="ptm pnpost">
+<a href="home.php?mod=spacecp&amp;ac=credit&amp;op=rule&amp;fid=129" class="y" target="_blank">本版积分规则</a>
+<button onmouseover="checkpostrule('seccheck_fastpost', 'ac=reply');this.onmouseover=null" name="replysubmit" id="fastpostsubmit" class="pn pnc vm" value="replysubmit" tabindex="5"><strong>发表回复</strong></button>
+<label class="lb"><input type="checkbox" name="adddynamic" class="pc" value="1" />回帖并转播</label>
+<label for="fastpostrefresh"><input id="fastpostrefresh" type="checkbox" class="pc" />回帖后跳转到最后一页</label>
+<script type="text/javascript">if(getcookie('fastpostrefresh') == 1) {$('fastpostrefresh').checked=true;}</script>
+</p>
+</td>
+</tr>
+</table>
+</form>
+</div>
+
+<div id="visitedforums_menu" class="p_pop blk cl" style="display: none;">
+<table cellspacing="0" cellpadding="0">
+<tr>
+<td id="v_forums">
+<h3 class="mbn pbn bbda xg1">浏览过的版块</h3>
+<ul class="xl xl1">
+<li><a href="forum-401-1.html">新手Free</a></li><li><a href="forum-21-1.html">游戏天下</a></li></ul>
+</td>
+</tr>
+</table>
+</div>
+<div id="md_93_menu" class="tip tip_4" style="display: none;">
+<div class="tip_horn"></div>
+<div class="tip_c">
+<h4>江湖新秀荣誉勋章</h4>
+<p>江湖新秀，你已经声名鹊起，前途不可限量。（随时保持）上传≥10T；贡献≥1000 OR 帖子数≥10000（贡献和帖子数两者满足其一即可）。</p>
+</div>
+</div>
+<div id="md_94_menu" class="tip tip_4" style="display: none;">
+<div class="tip_horn"></div>
+<div class="tip_c">
+<h4>杰出贡献勋章</h4>
+<p>您对六维的贡献已达”杰出“水平，特颁发本勋章以示奖励！获得条件：贡献值达到1000可提出申请，其他对论坛的贡献足够杰出的个人也可提出申请，管理员批准后予以颁发！</p>
+</div>
+</div>
+<div id="md_42_menu" class="tip tip_4" style="display: none;">
+<div class="tip_horn"></div>
+<div class="tip_c">
+<h4>超级幸运勋章</h4>
+<p>看看我可爱的样子，你就知道自己有多幸运啦，超级lucky哦！售价8888金钱，大发，有效期100天！</p>
+</div>
+</div>
+<div id="md_49_menu" class="tip tip_4" style="display: none;">
+<div class="tip_horn"></div>
+<div class="tip_c">
+<h4>互助先锋</h4>
+<p>定期开放申请，到时自行申请或版主推荐，请关注六维互助相关信息；有效期90天。</p>
+</div>
+</div>
+<div id="md_40_menu" class="tip tip_4" style="display: none;">
+<div class="tip_horn"></div>
+<div class="tip_c">
+<h4>贴图大师</h4>
+<p>定期开放申请，到时自行申请或版主推荐，请关注六维视界相关信息；有效期90天。</p>
+</div>
+</div>
+<div id="md_39_menu" class="tip tip_4" style="display: none;">
+<div class="tip_horn"></div>
+<div class="tip_c">
+<h4>六维优秀会员</h4>
+<p>奖励各方面优秀的会员，您在六维的表现，证明了您值得拥有一枚勋章！要求：贡献≥200,发帖数≥1000,在线时间(小时)≥200,上传≥1048576MB；满足条件的用户在个人中心自己领取，不予公告。</p>
+</div>
+</div>
+<div id="md_9_menu" class="tip tip_4" style="display: none;">
+<div class="tip_horn"></div>
+<div class="tip_c">
+<h4>论坛财主勋章</h4>
+<p>有钱，那是奋斗的结晶，欢迎加入财主队伍！要求：（随时保持）浮云≥10W，上传≥5TB；注意：一旦金钱低于10W,或上传小于5TB，本勋章予以回收，不再返回，举报有奖！自助申请。</p>
+</div>
+</div>
+<div id="md_72_menu" class="tip tip_4" style="display: none;">
+<div class="tip_horn"></div>
+<div class="tip_c">
+<h4>爆楼队队员</h4>
+<p>爆楼队队员，一批可爱滴人儿o(∩_∩)o </p>
+</div>
+</div>
+<script type="text/javascript">document.onkeyup = function(e){keyPageScroll(e, 0, 0, 'forum.php?mod=viewthread&tid=784528', 1);}</script>
+</div>
+
+<div class="wp mtn">
+<!--[diy=diy3]--><div id="diy3" class="area"></div><!--[/diy]-->
+</div>
+
+<script type="text/javascript">
+function succeedhandle_followmod(url, msg, values) {
+var fObj = $('followmod_'+values['fuid']);
+if(values['type'] == 'add') {
+fObj.innerHTML = '不收听';
+fObj.href = 'home.php?mod=spacecp&ac=follow&op=del&fuid='+values['fuid'];
+} else if(values['type'] == 'del') {
+fObj.innerHTML = '收听TA';
+fObj.href = 'home.php?mod=spacecp&ac=follow&op=add&hash=7a6d56f3&fuid='+values['fuid'];
+}
+}
+</script>	</div>
+<div class="wp a_f"><script language="javascript" type="text/javascript">
+function format(time)
+{
+time = time.substr(0,(time.length-3));
+if (time<1000) {
+        time = time+' MB';
+} else if (time<1024000) {
+        time = (time/1024).toFixed(2)+' GB';
+} else if (time<1048576000) {
+        time = (time/1048576).toFixed(2)+' TB';
+} else {
+        time = (time/1073741824).toFixed(2)+' PB';
+}
+return time;
+}
+function sizeFormat(){
+                
+var dts = document.getElementsByTagName('dt');
+
+for(var i=0;i<dts.length;i++)
+{
+	var dt = dts[i];
+	if(dt.innerHTML == "上传")
+	{
+		var dl = dt.nextSibling;
+		dl.innerHTML = format(dl.innerHTML);
+	}
+	if(dt.innerHTML == "下载")
+	{
+		var dl = dt.nextSibling;
+		dl.innerHTML = format(dl.innerHTML);
+	}
+}
+
+}
+sizeFormat();
+</script></div><div id="ft" class="wp cl">
+<div id="flk" class="y">
+<p>
+<strong><a href="http://bt.neu6.edu.cn" target="_blank">六维空间</a></strong>
+</p>
+<p class="xs0">
+GMT+8, 2017-12-27 15:04<span id="debuginfo">
+, Processed in 0.153983 second(s), 21 queries
+.
+</span>
+</p>
+</div>
+<div id="frt">
+<p>Powered by <strong><a href="http://www.discuz.net" target="_blank">Discuz!</a></strong> <em>7.2</em></p>
+<p class="xs0">&copy; 2001-2013 <a href="http://www.comsenz.com" target="_blank">Comsenz Inc.</a></p>
+</div></div>
+<div id="scrolltop">
+<span><a href="forum.php?mod=post&amp;action=reply&amp;fid=129&amp;tid=784528&amp;extra=page%3D1&amp;page=1" onclick="showWindow('reply', this.href)" class="replyfast" title="快速回复"><b>快速回复</b></a></span>
+<span hidefocus="true"><a title="返回顶部" onclick="window.scrollTo('0','0')" class="scrolltopa" ><b>返回顶部</b></a></span>
+<span>
+<a href="forum-129-1.html" hidefocus="true" class="returnlist" title="返回列表"><b>返回列表</b></a>
+</span>
+</div>
+<script type="text/javascript">_attachEvent(window, 'scroll', function () { showTopLink(); });checkBlind();</script>
+			<div id="discuz_tips" style="display:none;"></div>
+			<script type="text/javascript">
+				var tipsinfo = '29084656|X3.2|0.6||0||733468|10|1514358291|ffaab05e49f1cec57ab3e594c08a23d9|2';
+			</script>
+			<script src="http://discuz.gtimg.cn/cloud/scripts/discuz_tips.js?v=1" type="text/javascript" charset="UTF-8"></script></body>
+</html>

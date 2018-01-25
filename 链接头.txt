@@ -1,0 +1,8 @@
+magnet:?xt=urn:btih:
+http://pan.baidu.com/s/
+
+
+XPIOVU3PYWJXV37OBLDI3CFQ2VN2RPIU
+
+
+http://TheTorrent.org/<INFO_HASH_IN_HEX>.torrent
